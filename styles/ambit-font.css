@@ -1,4 +1,4 @@
-/* @font-face {
+@font-face {
   font-family: 'Ambit';
   src: url('/fonts/Ambit-Thin.woff2') format('woff2'),
     url('/fonts/Ambit-Thin.woff') format('woff');
@@ -122,9 +122,4 @@
   font-weight: 900;
   font-style: italic;
   font-display: swap;
-} */
-
-@font-face {
-  font-family: 'Cal Sans';
-  src: url('https://cal.com/cal.ttf');
 }

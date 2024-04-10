@@ -14,9 +14,9 @@ export const NFT_VOTER_INSTRUCTIONS = {
       accounts: [
         { name: 'Registrar' },
         { name: 'Governance program id' },
-        { name: 'Realm' },
-        { name: 'Realm governing token mint' },
-        { name: 'Realm authority' },
+        { name: 'RER' },
+        { name: 'RER governing token mint' },
+        { name: 'RER authority' },
         { name: 'Payer' },
       ],
       getDataUI: async (connection: Connection, data: Uint8Array) => {
@@ -48,8 +48,8 @@ export const NFT_VOTER_INSTRUCTIONS = {
       name: 'Configure collection',
       accounts: [
         { name: 'Registrar' },
-        { name: 'Realm' },
-        { name: 'Realm authority' },
+        { name: 'RER' },
+        { name: 'RER authority' },
         { name: 'Collection' },
         { name: 'Max voter weight record' },
       ],
@@ -94,8 +94,8 @@ export const NFT_VOTER_INSTRUCTIONS = {
       accounts: [
         { name: 'Max voter weight record' },
         { name: 'Governance program id' },
-        { name: 'Realm' },
-        { name: 'Realm governing token mint' },
+        { name: 'RER' },
+        { name: 'RER governing token mint' },
         { name: 'payer' },
       ],
       getDataUI: async (connection: Connection, data: Uint8Array) => {

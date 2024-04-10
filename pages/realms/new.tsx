@@ -10,6 +10,12 @@ const New: React.FC = () => {
   const { fmtUrlWithCluster } = useQueryContext()
   const DAO_TYPES = [
     {
+      url: '/realms/new/community-token',
+      name: 'Community Token DAO',
+      description:
+        'DAO members use a community token to denote their membership and allow them to vote on proposals.',
+    },
+    {
       url: '/realms/new/multisig',
       name: 'Multi-Signature Wallet',
       description:
@@ -20,13 +26,7 @@ const New: React.FC = () => {
       name: 'NFT Community DAO',
       description:
         'NFT Community DAOs leverage NFTs as membership, giving NFT holders voting power to make decisions.',
-    },
-    {
-      url: '/realms/new/community-token',
-      name: 'Community Token DAO',
-      description:
-        'DAO members use a community token to denote their membership and allow them to vote on proposals.',
-    },
+    }
   ]
   return (
     <>
@@ -34,7 +34,7 @@ const New: React.FC = () => {
         <title>Create new DAO | RER</title>
       </Head>
       <Header as="h2" className="mt-8 ">
-        Choose which DAO <br />
+        Choose which <br />
         would you like to create?
       </Header>
       <div className="pt-5 pb-4 mx-auto mt-8 rounded lg:mt-16">

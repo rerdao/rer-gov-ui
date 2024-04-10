@@ -61,7 +61,7 @@ export const GOVERNANCE_INSTRUCTIONS = {
       ///  9. `[]` RealmConfig account. PDA seeds: ['realm-config', realm]
       name: 'Deposit Governing Tokens',
       accounts: [
-        { name: 'Realm' },
+        { name: 'RER' },
         { name: 'Governing Token Holding' },
         { name: 'Mint' },
         { name: 'Governing Token Owner' },
@@ -70,7 +70,7 @@ export const GOVERNANCE_INSTRUCTIONS = {
         { name: 'Payer' },
         { name: 'System' },
         { name: 'SPL Token Program' },
-        { name: 'Realm Config' },
+        { name: 'RER Config' },
       ],
       getDataUI: async (
         connection: Connection,
@@ -176,32 +176,32 @@ export const GOVERNANCE_INSTRUCTIONS = {
                 communityVoteThreshold:{' '}
                 {governance.account.config.communityVoteThreshold.value
                   ? governance.account.config.communityVoteThreshold.value?.toLocaleString() +
-                    '%'
+                  '%'
                   : 'Disabled'}
               </p>
               <p>
                 councilVoteThreshold:{' '}
                 {governance.account.config.councilVoteThreshold.value
                   ? governance.account.config.councilVoteThreshold.value?.toLocaleString() +
-                    '%'
+                  '%'
                   : 'Disabled'}
               </p>
               <p>
                 communityVetoVoteThreshold:{' '}
                 {governance.account.config.communityVetoVoteThreshold.value
                   ? governance.account.config.communityVetoVoteThreshold.value?.toLocaleString() +
-                    '%'
+                  '%'
                   : 'Disabled'}
               </p>
               <p>
                 councilVetoVoteThreshold:{' '}
                 {governance.account.config.councilVetoVoteThreshold.value
                   ? governance.account.config.councilVetoVoteThreshold.value?.toLocaleString() +
-                    '%'
+                  '%'
                   : 'Disabled'}
               </p>
               {governance.account.config.minCommunityTokensToCreateProposal.toString() ===
-              DISABLED_VOTER_WEIGHT.toString() ? (
+                DISABLED_VOTER_WEIGHT.toString() ? (
                 <p>minCommunityTokensToCreateProposal: Disabled</p>
               ) : (
                 <p>
@@ -216,7 +216,7 @@ export const GOVERNANCE_INSTRUCTIONS = {
                 </p>
               )}
               {governance.account.config.minCouncilTokensToCreateProposal.toString() ===
-              DISABLED_VOTER_WEIGHT.toString() ? (
+                DISABLED_VOTER_WEIGHT.toString() ? (
                 <p>minCouncilTokensToCreateProposal: Disabled</p>
               ) : (
                 <p>
@@ -233,26 +233,23 @@ export const GOVERNANCE_INSTRUCTIONS = {
               <p>
                 {`minInstructionHoldUpTime:
           ${getDaysFromTimestamp(
-            governance.account.config.minInstructionHoldUpTime
-          )} day(s) | raw arg: ${
                   governance.account.config.minInstructionHoldUpTime
-                } secs`}
+                )} day(s) | raw arg: ${governance.account.config.minInstructionHoldUpTime
+                  } secs`}
               </p>
               <p>
                 {`baseVotingTime:
           ${getDaysFromTimestamp(
-            governance.account.config.baseVotingTime
-          )} days(s) | raw arg: ${
                   governance.account.config.baseVotingTime
-                } secs`}
+                )} days(s) | raw arg: ${governance.account.config.baseVotingTime
+                  } secs`}
               </p>
               <p>
                 {`votingCoolOffTime:
           ${getHoursFromTimestamp(
-            governance.account.config.votingCoolOffTime
-          )} hour(s) | raw arg: ${
                   governance.account.config.votingCoolOffTime
-                } secs`}
+                )} hour(s) | raw arg: ${governance.account.config.votingCoolOffTime
+                  } secs`}
               </p>
               <p>
                 {`depositExemptProposalCount:
@@ -276,32 +273,32 @@ export const GOVERNANCE_INSTRUCTIONS = {
                 communityVoteThreshold:
                 {args.config.communityVoteThreshold.value
                   ? args.config.communityVoteThreshold.value?.toLocaleString() +
-                    '%'
+                  '%'
                   : 'Disabled'}
               </p>
               <p>
                 councilVoteThreshold:{' '}
                 {args.config.councilVoteThreshold.value
                   ? args.config.councilVoteThreshold.value?.toLocaleString() +
-                    '%'
+                  '%'
                   : 'Disabled'}
               </p>
               <p>
                 communityVetoVoteThreshold:{' '}
                 {args.config.communityVetoVoteThreshold.value
                   ? args.config.communityVetoVoteThreshold.value?.toLocaleString() +
-                    '%'
+                  '%'
                   : 'Disabled'}
               </p>
               <p>
                 councilVetoVoteThreshold:{' '}
                 {args.config.councilVetoVoteThreshold.value
                   ? args.config.councilVetoVoteThreshold.value?.toLocaleString() +
-                    '%'
+                  '%'
                   : 'Disabled'}
               </p>
               {args.config.minCommunityTokensToCreateProposal.toString() ===
-              DISABLED_VOTER_WEIGHT.toString() ? (
+                DISABLED_VOTER_WEIGHT.toString() ? (
                 <p>minCommunityTokensToCreateProposal: Disabled</p>
               ) : (
                 <p>
@@ -314,7 +311,7 @@ export const GOVERNANCE_INSTRUCTIONS = {
                 </p>
               )}
               {args.config.minCouncilTokensToCreateProposal.toString() ===
-              DISABLED_VOTER_WEIGHT.toString() ? (
+                DISABLED_VOTER_WEIGHT.toString() ? (
                 <p>minCouncilTokensToCreateProposal: Disabled</p>
               ) : (
                 <p>
@@ -329,20 +326,20 @@ export const GOVERNANCE_INSTRUCTIONS = {
               <p>
                 {`minInstructionHoldUpTime:
           ${getDaysFromTimestamp(
-            args.config.minInstructionHoldUpTime
-          )} day(s) | raw arg: ${args.config.minInstructionHoldUpTime} secs`}
+                  args.config.minInstructionHoldUpTime
+                )} day(s) | raw arg: ${args.config.minInstructionHoldUpTime} secs`}
               </p>
               <p>
                 {`baseVotingTime:
           ${getDaysFromTimestamp(
-            args.config.baseVotingTime
-          )} days(s) | raw arg: ${args.config.baseVotingTime} secs`}
+                  args.config.baseVotingTime
+                )} days(s) | raw arg: ${args.config.baseVotingTime} secs`}
               </p>
               <p>
                 {`votingCoolOffTime:
           ${getHoursFromTimestamp(
-            args.config.votingCoolOffTime
-          )} hour(s) | raw arg: ${args.config.votingCoolOffTime} secs`}
+                  args.config.votingCoolOffTime
+                )} hour(s) | raw arg: ${args.config.votingCoolOffTime} secs`}
               </p>
               <p>
                 {`depositExemptProposalCount:
@@ -372,9 +369,9 @@ export const GOVERNANCE_INSTRUCTIONS = {
                 <div>
                   {`minCommunityTokensToCreateProposal:
               ${fmtMintAmount(
-                communityMint?.account,
-                governance.account.config.minCommunityTokensToCreateProposal
-              )}`}{' '}
+                    communityMint?.account,
+                    governance.account.config.minCommunityTokensToCreateProposal
+                  )}`}{' '}
                   (
                   {governance.account.config.minCommunityTokensToCreateProposal.toNumber()}
                   )
@@ -383,21 +380,21 @@ export const GOVERNANCE_INSTRUCTIONS = {
               <p>
                 {`minCouncilTokensToCreateProposal:
               ${fmtMintAmount(
-                councilMint?.account,
-                governance.account.config.minCouncilTokensToCreateProposal
-              )}`}
+                  councilMint?.account,
+                  governance.account.config.minCouncilTokensToCreateProposal
+                )}`}
               </p>
               <p>
                 {`minInstructionHoldUpTime:
               ${getDaysFromTimestamp(
-                governance.account.config.minInstructionHoldUpTime
-              )} day(s)`}
+                  governance.account.config.minInstructionHoldUpTime
+                )} day(s)`}
               </p>
               <p>
                 {`baseVotingTime:
               ${getDaysFromTimestamp(
-                governance.account.config.baseVotingTime
-              )} days(s)`}
+                  governance.account.config.baseVotingTime
+                )} days(s)`}
               </p>
               <p>
                 {`voteTipping:
@@ -416,24 +413,24 @@ export const GOVERNANCE_INSTRUCTIONS = {
                 <div>
                   {`minCommunityTokensToCreateProposal:
               ${fmtMintAmount(
-                communityMint?.account,
-                args.config.minCommunityTokensToCreateProposal
-              )}`}{' '}
+                    communityMint?.account,
+                    args.config.minCommunityTokensToCreateProposal
+                  )}`}{' '}
                   ({args.config.minCommunityTokensToCreateProposal.toNumber()})
                 </div>
               )}
               <p>
                 {`minCouncilTokensToCreateProposal:
               ${fmtMintAmount(
-                councilMint?.account,
-                args.config.minCouncilTokensToCreateProposal
-              )}`}
+                  councilMint?.account,
+                  args.config.minCouncilTokensToCreateProposal
+                )}`}
               </p>
               <p>
                 {`minInstructionHoldUpTime:
               ${getDaysFromTimestamp(
-                args.config.minInstructionHoldUpTime
-              )} day(s)`}
+                  args.config.minInstructionHoldUpTime
+                )} day(s)`}
               </p>
               <p>
                 {`baseVotingTime:
@@ -509,7 +506,7 @@ export const GOVERNANCE_INSTRUCTIONS = {
                 className="underline"
                 target="_blank"
                 rel="noreferrer"
-                href={`https://app.realms.today/dao/${accounts[0].pubkey.toBase58()}/proposal/${accounts[2].pubkey.toBase58()}`}
+                href={`https://home.rerdao.xyz/dao/${accounts[0].pubkey.toBase58()}/proposal/${accounts[2].pubkey.toBase58()}`}
               >
                 Proposal link
               </a>
@@ -519,8 +516,8 @@ export const GOVERNANCE_INSTRUCTIONS = {
       },
     },
     22: {
-      name: 'Set Realm Config',
-      accounts: [{ name: 'Realm' }, { name: 'Realm Authority' }],
+      name: 'Set RER Config',
+      accounts: [{ name: 'RER' }, { name: 'RER Authority' }],
       getDataUI: async (
         connection: Connection,
         data: Uint8Array,
@@ -587,7 +584,7 @@ export const GOVERNANCE_INSTRUCTIONS = {
               )
               parsedRealmConfig = account as ProgramAccount<RealmConfigAccount>
               // eslint-disable-next-line no-empty
-            } catch {}
+            } catch { }
           }
         }
         const proposedPluginPk = parsedRealmConfig?.account?.communityTokenConfig?.voterWeightAddin?.toBase58()
@@ -625,46 +622,44 @@ export const GOVERNANCE_INSTRUCTIONS = {
             </p>
             <p>
               {`communityTokenConfigArgs.tokenType:
-               ${
-                 TOKEN_TYPES[args.configArgs.communityTokenConfigArgs.tokenType]
-               }`}{' '}
+               ${TOKEN_TYPES[args.configArgs.communityTokenConfigArgs.tokenType]
+                }`}{' '}
               ({args.configArgs.communityTokenConfigArgs.tokenType})
             </p>
             <p>
               {`communityTokenConfigArgs.useVoterWeightAddin:
                ${
-                 // note that the !! should do nothing, but the typing is inaccurate and the value is actually 0 or 1
-                 !!args.configArgs.communityTokenConfigArgs.useVoterWeightAddin
-               }`}
+                // note that the !! should do nothing, but the typing is inaccurate and the value is actually 0 or 1
+                !!args.configArgs.communityTokenConfigArgs.useVoterWeightAddin
+                }`}
             </p>
             <p>
               {`communityTokenConfigArgs.useMaxVoterWeightAddin:
                ${
-                 // note that the !! should do nothing, but the typing is inaccurate and the value is actually 0 or 1
-                 !!args.configArgs.communityTokenConfigArgs
-                   .useMaxVoterWeightAddin
-               }`}
+                // note that the !! should do nothing, but the typing is inaccurate and the value is actually 0 or 1
+                !!args.configArgs.communityTokenConfigArgs
+                  .useMaxVoterWeightAddin
+                }`}
             </p>
             <p>
               {`councilTokenConfigArgs.tokenType:
-               ${
-                 TOKEN_TYPES[args.configArgs.councilTokenConfigArgs.tokenType]
-               }`}{' '}
+               ${TOKEN_TYPES[args.configArgs.councilTokenConfigArgs.tokenType]
+                }`}{' '}
               ({args.configArgs.councilTokenConfigArgs.tokenType})
             </p>
             <p>
               {`councilTokenConfigArgs.useVoterWeightAddin:
                ${
-                 // note that the !! should do nothing, but the typing is inaccurate and the value is actually 0 or 1
-                 !!args.configArgs.councilTokenConfigArgs.useVoterWeightAddin
-               }`}
+                // note that the !! should do nothing, but the typing is inaccurate and the value is actually 0 or 1
+                !!args.configArgs.councilTokenConfigArgs.useVoterWeightAddin
+                }`}
             </p>
             <p>
               {`councilTokenConfigArgs.useMaxVoterWeightAddin:
                ${
-                 // note that the !! should do nothing, but the typing is inaccurate and the value is actually 0 or 1
-                 !!args.configArgs.councilTokenConfigArgs.useMaxVoterWeightAddin
-               }`}
+                // note that the !! should do nothing, but the typing is inaccurate and the value is actually 0 or 1
+                !!args.configArgs.councilTokenConfigArgs.useMaxVoterWeightAddin
+                }`}
             </p>
           </>
         ) : (
@@ -674,9 +669,9 @@ export const GOVERNANCE_INSTRUCTIONS = {
               <p>
                 {`minCommunityTokensToCreateGovernance:
               ${fmtVoterWeightThresholdMintAmount(
-                communityMint?.account,
-                realm.account.config.minCommunityTokensToCreateGovernance
-              )}`}{' '}
+                  communityMint?.account,
+                  realm.account.config.minCommunityTokensToCreateGovernance
+                )}`}{' '}
                 (
                 {fmtBNAmount(
                   realm.account.config.minCommunityTokensToCreateGovernance
@@ -707,18 +702,18 @@ export const GOVERNANCE_INSTRUCTIONS = {
               <p>
                 {currentRealmConfig?.account.communityTokenConfig
                   .voterWeightAddin && (
-                  <div>
-                    {`communityVoterWeightAddin :
+                    <div>
+                      {`communityVoterWeightAddin :
                ${currentRealmConfig?.account.communityTokenConfig.voterWeightAddin?.toBase58()}`}
-                  </div>
-                )}
+                    </div>
+                  )}
                 {currentRealmConfig?.account.communityTokenConfig
                   .maxVoterWeightAddin && (
-                  <div>
-                    {`maxCommunityVoterWeightAddin:
+                    <div>
+                      {`maxCommunityVoterWeightAddin:
                ${currentRealmConfig?.account.communityTokenConfig.maxVoterWeightAddin?.toBase58()}`}
-                  </div>
-                )}
+                    </div>
+                  )}
               </p>
             </div>
             <h1 className="mt-10">Proposed config</h1>
@@ -726,9 +721,9 @@ export const GOVERNANCE_INSTRUCTIONS = {
               <p>
                 {`minCommunityTokensToCreateGovernance:
               ${fmtVoterWeightThresholdMintAmount(
-                communityMint?.account,
-                args.configArgs.minCommunityTokensToCreateGovernance
-              )}`}{' '}
+                  communityMint?.account,
+                  args.configArgs.minCommunityTokensToCreateGovernance
+                )}`}{' '}
                 (
                 {fmtBNAmount(
                   args.configArgs.minCommunityTokensToCreateGovernance
@@ -750,18 +745,16 @@ export const GOVERNANCE_INSTRUCTIONS = {
               </p>
               <p>
                 {`useCommunityVoterWeightAddin:
-               ${
-                 !!args.configArgs.useCommunityVoterWeightAddin ||
-                 !!args.configArgs.communityTokenConfigArgs?.useVoterWeightAddin
-               }`}
+               ${!!args.configArgs.useCommunityVoterWeightAddin ||
+                  !!args.configArgs.communityTokenConfigArgs?.useVoterWeightAddin
+                  }`}
               </p>
               <p>
                 {`useMaxCommunityVoterWeightAddin:
-               ${
-                 !!args.configArgs.useMaxCommunityVoterWeightAddin ||
-                 !!args.configArgs.communityTokenConfigArgs
-                   ?.useMaxVoterWeightAddin
-               }`}
+               ${!!args.configArgs.useMaxCommunityVoterWeightAddin ||
+                  !!args.configArgs.communityTokenConfigArgs
+                    ?.useMaxVoterWeightAddin
+                  }`}
               </p>
               <p>
                 {proposedPluginPk && (
@@ -798,7 +791,7 @@ export const GOVERNANCE_INSTRUCTIONS = {
       ///  6. `[]` SPL Token program
       accounts: [
         {
-          name: 'Realm',
+          name: 'RER',
         },
         {
           name: 'Governing Token Holding',
@@ -812,7 +805,7 @@ export const GOVERNANCE_INSTRUCTIONS = {
         {
           name: 'Governing Token Mint Authority',
         },
-        { name: 'Realm Config Account' },
+        { name: 'RER Config Account' },
         { name: 'SPL Token Program' },
       ],
       getDataUI: async (

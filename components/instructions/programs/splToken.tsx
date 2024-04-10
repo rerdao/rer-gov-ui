@@ -15,14 +15,14 @@ interface TokenMintMetadata {
 
 // Mint metadata for Well known tokens displayed on the instruction card
 const MINT_METADATA = {
-  MangoCzJ36AjZyKwVj3VnYU4GTonjfVEnJmvvWaxLac: { name: 'MNGO' },
+  // MangoCzJ36AjZyKwVj3VnYU4GTonjfVEnJmvvWaxLac: { name: 'MNGO' },
   EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v: { name: 'USDC' },
-  '5oVNBeEEQvYi1cX3ir8Dx5n1P7pdxydbGF2X4TxVusJm': { name: 'SOCN' },
-  SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt: { name: 'SRM' },
-  MyHd6a7HWKTMeJMHBkrbMq4hZwZxwn9x7dxXcopQ4Wd: { name: 'OMH' },
-  UXPhBoR3qG4UCiGNJfV7MqhHyFqKN68g45GoYvAeL2M: { name: 'UXP' },
-  H7uqouPsJkeEiLpCEoC1qYVVquDrZan6ZfdPK2gS44zm: { name: 'FORE' },
-  BaoawH9p2J8yUK9r5YXQs3hQwmUJgscACjmTkh8rMwYL: { name: 'ALL' },
+  // 5oVNBeEEQvYi1cX3ir8Dx5n1P7pdxydbGF2X4TxVusJm: { name: 'SOCN' },
+  CkEcTreuyLTaexhw2aaZy98VtDzEakvy3C8qtxBtYFqB: { name: 'RER' },
+  // MyHd6a7HWKTMeJMHBkrbMq4hZwZxwn9x7dxXcopQ4Wd: { name: 'OMH' },
+  // UXPhBoR3qG4UCiGNJfV7MqhHyFqKN68g45GoYvAeL2M: { name: 'UXP' },
+  // H7uqouPsJkeEiLpCEoC1qYVVquDrZan6ZfdPK2gS44zm: { name: 'FORE' },
+  // BaoawH9p2J8yUK9r5YXQs3hQwmUJgscACjmTkh8rMwYL: { name: 'ALL' },
 }
 
 export function getMintMetadata(
@@ -78,9 +78,8 @@ export const SPL_TOKEN_INSTRUCTIONS = {
               <div>
                 <div>
                   <span>Amount:</span>
-                  <span>{`${tokenAmount.toNumber().toLocaleString()} ${
-                    tokenMintDescriptor?.name ?? ''
-                  }`}</span>
+                  <span>{`${tokenAmount.toNumber().toLocaleString()} ${tokenMintDescriptor?.name ?? ''
+                    }`}</span>
                 </div>
               </div>
             ) : (
@@ -185,9 +184,8 @@ export const SPL_TOKEN_INSTRUCTIONS = {
               <div>
                 <div>
                   <span>Amount:</span>
-                  <span>{`${tokenAmount.toNumber().toLocaleString()} ${
-                    tokenMintDescriptor?.name ?? ''
-                  }`}</span>
+                  <span>{`${tokenAmount.toNumber().toLocaleString()} ${tokenMintDescriptor?.name ?? ''
+                    }`}</span>
                 </div>
               </div>
             ) : (
@@ -225,9 +223,8 @@ export const SPL_TOKEN_INSTRUCTIONS = {
               <div>
                 <div>
                   <span>Amount:</span>
-                  <span>{`${tokenAmount.toNumber().toLocaleString()} ${
-                    tokenMintDescriptor?.name ?? ''
-                  }`}</span>
+                  <span>{`${tokenAmount.toNumber().toLocaleString()} ${tokenMintDescriptor?.name ?? ''
+                    }`}</span>
                 </div>
               </div>
             ) : (

@@ -37,15 +37,6 @@ const Assets = () => {
     toManyCouncilOutstandingProposalsForUse
   )
 
-  // const addNewAssetTooltip = !connected
-  //   ? 'Connect your wallet to create new asset'
-  //   : !canCreateGovernance
-  //   ? "You don't have enough governance power to create a new asset"
-  //   : toManyCommunityOutstandingProposalsForUser
-  //   ? 'You have too many community outstanding proposals. You need to finalize them before creating a new asset.'
-  //   : toManyCouncilOutstandingProposalsForUse
-  //   ? 'You have too many council outstanding proposals. You need to finalize them before creating a new asset.'
-  //   : ''
   return (
     <div className="bg-bkg-2 rounded-lg p-4 md:p-6">
       <div className="grid grid-cols-12 gap-6">
@@ -58,11 +49,10 @@ const Assets = () => {
             <Tooltip contentClassName="ml-auto" content={newAssetToolTip}>
               <LinkButton
                 onClick={goToNewAssetForm}
-                className={`flex items-center text-primary-light ${
-                  newAssetToolTip
+                className={`flex items-center text-primary-light ${newAssetToolTip
                     ? 'cursor-not-allowed pointer-events-none opacity-60'
                     : 'cursor-pointer'
-                }`}
+                  }`}
               >
                 <PlusCircleIcon className="h-5 mr-2 w-5" />
                 New Program
@@ -87,10 +77,10 @@ export const renderAddNewAssetTooltip = (
   return !connected
     ? 'Connect your wallet to create new asset'
     : !canCreateGovernance
-    ? "You don't have enough governance power to create a new asset"
-    : toManyCommunityOutstandingProposalsForUser
-    ? 'You have too many community outstanding proposals. You need to finalize them before creating a new asset.'
-    : toManyCouncilOutstandingProposalsForUse
-    ? 'You have too many council outstanding proposals. You need to finalize them before creating a new asset.'
-    : ''
+      ? "You don't have enough governance power to create a new asset"
+      : toManyCommunityOutstandingProposalsForUser
+        ? 'You have too many community outstanding proposals. You need to finalize them before creating a new asset.'
+        : toManyCouncilOutstandingProposalsForUse
+          ? 'You have too many council outstanding proposals. You need to finalize them before creating a new asset.'
+          : ''
 }

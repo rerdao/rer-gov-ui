@@ -10,7 +10,7 @@ const SENTRY_ENVIRONMENT = process.env.VERCEL_ENV
 Sentry.init({
   dsn:
     SENTRY_DSN ||
-    'https://18ab56d9b27a4483a29e51d6520afbc6@o434108.ingest.sentry.io/6380292',
+    'https://6b57f2635a32bc5627a5e4835821d175@o4507050309255168.ingest.us.sentry.io/4507050311811072',
   // Adjust this value in production, or use tracesSampler for greater control
   tracesSampleRate: 1.0,
   environment: SENTRY_ENVIRONMENT,

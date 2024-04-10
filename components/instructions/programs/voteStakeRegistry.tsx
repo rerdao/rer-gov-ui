@@ -111,10 +111,10 @@ const createRegistrarIx = (_programId: PublicKey) => ({
     name: 'Create registrar',
     accounts: [
       { name: 'Registrar' },
-      { name: 'Realm' },
+      { name: 'RER' },
       { name: 'Governance program id' },
-      { name: 'Realm governing token mint' },
-      { name: 'Realm authority' },
+      { name: 'RER governing token mint' },
+      { name: 'RER authority' },
       { name: 'Payer' },
     ],
     getDataUI: async () => {
@@ -176,7 +176,7 @@ const configVotingMintIx = (programId: PublicKey) => ({
     name: 'Configure voting mint',
     accounts: [
       { name: 'Registrar' },
-      { name: 'Realm authority' },
+      { name: 'RER authority' },
       { name: 'Mint' },
     ],
     getDataUI: async (connection: Connection, data: Uint8Array) => {
@@ -326,9 +326,9 @@ const grantIx = (programId: PublicKey) => ({
                     End date:{' '}
                     {new Date(
                       decodedInstructionData.startTs.toNumber() * 1000 +
-                        (lockupKind === 'monthly'
-                          ? periods * DAYS_PER_MONTH * SECS_PER_DAY * 1000
-                          : periods * SECS_PER_DAY * 1000)
+                      (lockupKind === 'monthly'
+                        ? periods * DAYS_PER_MONTH * SECS_PER_DAY * 1000
+                        : periods * SECS_PER_DAY * 1000)
                     ).toDateString()}
                   </div>
                 )}
@@ -360,10 +360,10 @@ const heliumInitializeRegistrarIx = (_programId: PublicKey) => ({
       { name: 'Collection Metadata' },
       { name: 'Master Edition' },
       { name: 'Token Account' },
-      { name: 'Realm' },
+      { name: 'RER' },
       { name: 'Governance program id' },
-      { name: 'Realm governing token mint' },
-      { name: 'Realm authority' },
+      { name: 'RER governing token mint' },
+      { name: 'RER authority' },
       { name: 'Payer' },
     ],
     getDataUI: async () => {
@@ -377,7 +377,7 @@ const heliumConfigVotingMintIx = (programId: PublicKey) => ({
     name: 'Configure voting mint',
     accounts: [
       { name: 'Registrar' },
-      { name: 'Realm authority' },
+      { name: 'RER authority' },
       { name: 'Mint' },
       { name: 'Payer' },
     ],

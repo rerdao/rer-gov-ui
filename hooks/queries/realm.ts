@@ -9,7 +9,7 @@ import { useConnection } from '@solana/wallet-adapter-react'
 import { HIDDEN_REALMS } from '@components/instructions/tools'
 
 export const realmQueryKeys = {
-  all: (endpoint: string) => [endpoint, 'Realm'],
+  all: (endpoint: string) => [endpoint, 'RER'],
   byPubkey: (endpoint: string, k: PublicKey) => [
     ...realmQueryKeys.all(endpoint),
     k.toString(),

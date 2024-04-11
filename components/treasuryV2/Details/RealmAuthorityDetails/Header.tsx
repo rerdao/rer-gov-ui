@@ -1,7 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 
-import LogoRealms from 'public/img/logo-realms.png'
+import LogoRealms from 'public/img/logo-rer.png'
 
 import { RealmAuthority } from '@models/treasury/Asset'
 import Address from '@components/Address'

@@ -2,7 +2,7 @@ import * as localforage from 'localforage';
 
 export const getName = (jwt: string | null) => {
   if (!jwt) {
-    return 'realms-anon';
+    return 'rers-anon';
   }
 
   return `realms-${jwt}`;

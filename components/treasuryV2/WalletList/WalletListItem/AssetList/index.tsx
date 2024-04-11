@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState, useMemo } from 'react'
 import cx from 'classnames'
 
@@ -106,10 +107,10 @@ export default function AssetList(props: Props) {
   const config = useRealmConfigQuery().data?.result
   const isCommunityMintDisabled =
     config?.account.communityTokenConfig?.tokenType ===
-      GoverningTokenType.Dormant || false
+    GoverningTokenType.Dormant || false
   const isCouncilMintDisabled =
     config?.account?.councilTokenConfig?.tokenType ===
-      GoverningTokenType.Dormant || false
+    GoverningTokenType.Dormant || false
 
   useEffect(() => {
     const getTokenData = async () => {
@@ -152,8 +153,8 @@ export default function AssetList(props: Props) {
     () =>
       governanceNfts && treasuryNfts
         ? [...governanceNfts, ...treasuryNfts]
-            .flat()
-            .filter((x) => SUPPORT_CNFTS || !x.compression.compressed)
+          .flat()
+          .filter((x) => SUPPORT_CNFTS || !x.compression.compressed)
         : undefined,
     [governanceNfts, treasuryNfts]
   )
@@ -214,8 +215,8 @@ export default function AssetList(props: Props) {
 
   const diplayingMultipleAssetTypes =
     (tokens.length > 0 ? 1 : 0) +
-      ((nfts?.length ?? 0) > 0 ? 1 : 0) +
-      (others.length > 0 ? 1 : 0) >
+    ((nfts?.length ?? 0) > 0 ? 1 : 0) +
+    (others.length > 0 ? 1 : 0) >
     1
 
   return (

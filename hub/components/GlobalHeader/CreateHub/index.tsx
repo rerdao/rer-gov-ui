@@ -142,14 +142,14 @@ export function CreateHub(props: Props) {
                         <Button.Secondary
                           className="w-60"
                           onClick={() => {
-                            window.open('/realms/new', '_blank');
+                            window.open('/rers/new', '_blank');
                           }}
                         >
                           Create Multisig or DAO{' '}
                           <LaunchIcon className="h-4 w-4 ml-1" />
                         </Button.Secondary>
                         <div className="text-xs text-neutral-500">
-                          app.realms.today/realms/new
+                          app.realms.today/rers/new
                         </div>
                       </div>
                     </div>

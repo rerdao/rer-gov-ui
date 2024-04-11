@@ -35,11 +35,21 @@ const DualWithdraw = ({
   >(undefined)
   const [formErrors, setFormErrors] = useState({})
   const { handleSetInstructions } = useContext(NewProposalContext)
-  const handleSetForm = ({ propertyName, value }) => {
-    setFormErrors({})
-    setForm({ ...form, [propertyName]: value })
-  }
+
   const schema = useMemo(getDualFinanceWithdrawSchema, [])
+
+  useEffect(() => {
+    const handleSetForm = ({ propertyName, value }) => {
+      setFormErrors({})
+      setForm({ ...form, [propertyName]: value })
+    }
+    handleSetForm({ value: undefined, propertyName: 'mintPk' })
+  }, [form, form.baseTreasury])
+
+  useEffect(() => {
+    setGovernedAccount(form.baseTreasury?.governance)
+  }, [form.baseTreasury])
+
   useEffect(() => {
     function getInstruction(): Promise<UiInstruction> {
       return getWithdrawInstruction({
@@ -54,13 +64,13 @@ const DualWithdraw = ({
       { governedAccount: governedAccount, getInstruction },
       index
     )
-  }, [form, governedAccount, handleSetInstructions, index, connection, wallet])
-  useEffect(() => {
-    handleSetForm({ value: undefined, propertyName: 'mintPk' })
-  }, [form.baseTreasury])
-  useEffect(() => {
-    setGovernedAccount(form.baseTreasury?.governance)
-  }, [form.baseTreasury])
+  }, [form, governedAccount, handleSetInstructions, index, connection, wallet, schema])
+
+
+
+  function handleSetForm(_arg0: { value: unknown; propertyName: string }) {
+    throw new Error('Function not implemented.')
+  }
 
   // TODO: Include this in the config instruction which can optionally be done
   // if the project doesnt need to change where the tokens get returned to.

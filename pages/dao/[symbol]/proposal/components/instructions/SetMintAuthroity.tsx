@@ -122,6 +122,7 @@ const SetMintAuthority = ({
       value: '',
       propertyName: 'mintAuthority',
     })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [form.setAuthorityToNone])
   return (
     <>

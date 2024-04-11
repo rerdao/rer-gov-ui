@@ -26,7 +26,7 @@ export const useRealmPubkeyByPkOrSymbol = (symbol: string | undefined) => {
   // but really something not async would be more appropriate.
   const { data: lookup } = useQuery({
     enabled: typeof symbol === 'string' && parsed === undefined,
-    queryKey: ['Realms symbol lookup', symbol],
+    queryKey: ['Rers symbol lookup', symbol],
     queryFn: () => {
       if (typeof symbol !== 'string') throw new Error()
 

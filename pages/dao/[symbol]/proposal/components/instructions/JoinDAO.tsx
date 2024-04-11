@@ -190,15 +190,15 @@ const JoinDAO = ({
   return (
     <>
       <Select
-        label={'Realm'}
+        label={'RER'}
         value={form.realm}
         onChange={(value) => {
-          handleSetForm({ value, propertyName: 'realm' })
+          handleSetForm({ value, propertyName: 'rer' })
         }}
         componentLabel={
-          form['realm'] ? form['realm'].displayName : 'Select Realm'
+          form['rer'] ? form['rer'].displayName : 'Select RER'
         }
-        error={formErrors['realm']}
+        error={formErrors['rer']}
       >
         {certifiedRealms.map((r) => (
           <Select.Option

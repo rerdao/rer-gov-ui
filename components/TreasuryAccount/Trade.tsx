@@ -51,7 +51,7 @@ import {
 import { deriveAllBoundedStrategyKeysV2 } from '@utils/instructions/PsyFinance/poseidon'
 import { TokenInfo } from '@utils/services/types'
 import useLegacyConnectionContext from '@hooks/useLegacyConnectionContext'
-import {useVoteByCouncilToggle} from "@hooks/useVoteByCouncilToggle";
+import { useVoteByCouncilToggle } from "@hooks/useVoteByCouncilToggle";
 
 type TradeProps = { tokenAccount: AssetAccount }
 
@@ -174,7 +174,7 @@ const Trade: React.FC<TradeProps> = ({ tokenAccount }) => {
   const { wallet, anchorProvider } = useWalletDeprecated()
   const { handleCreateProposal } = useCreateProposal()
   const { canUseTransferInstruction } = useGovernanceAssets()
-  const {symbol } = useRealm()
+  const { symbol } = useRealm()
   const { fmtUrlWithCluster } = useQueryContext()
   const [form, setForm] = useState<TradeForm>({
     amount: 0,
@@ -342,16 +342,7 @@ const Trade: React.FC<TradeProps> = ({ tokenAccount }) => {
     }
 
     setIsLoading(false)
-  }, [
-    schema,
-    form,
-    setFormErrors,
-    connection,
-    currentAccount,
-    destinationToken,
-    symbol,
-    wallet,
-  ])
+  }, [schema, form, currentAccount, destinationToken, wallet, anchorProvider, mintAccount.account.decimals, connection, tokenAccount.pubkey, handleCreateProposal, voteByCouncil, fmtUrlWithCluster, symbol, router])
 
   return (
     <>

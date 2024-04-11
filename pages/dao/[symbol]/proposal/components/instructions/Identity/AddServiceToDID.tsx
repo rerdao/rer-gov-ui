@@ -97,6 +97,7 @@ const AddServiceToDID = ({
       { governedAccount: form?.governedAccount?.governance, getInstruction },
       index
     )
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [form])
   const schema = yup.object().shape(SchemaComponents)
   const inputs: InstructionInput[] = [

@@ -67,7 +67,7 @@ const Footer = () => {
           <SocialIcons className="mb-5" />
           <div className="flex flex-col justify-center sm:space-x-2 text-center text-sm opacity-70 sm:flex-row sm:text-sm sm:text-left">
             <div className="flex-shrink-0">
-              © 2023 Solana Technology Services LLC
+              © 2024 RERDAO | Reverion Technologies Corp.
             </div>
             <span className="hidden sm:block mx-2">|</span>
             <Link href="https://realms.today/terms" passHref>
@@ -99,7 +99,7 @@ const Footer = () => {
         </a>
 
         <div className="opacity-70">
-          Powered by <span className="font-bold">Solana</span>
+          Powered by <span className="font-bold">Solana and Realm</span>
         </div>
       </div>
     </div>

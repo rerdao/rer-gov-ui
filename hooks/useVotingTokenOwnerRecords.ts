@@ -21,7 +21,7 @@ const useVotingTokenOwnerRecords = () => {
       // TODO fetch in body
       if (realm === undefined)
         throw new Error(
-          'realm not yet fetched; the fetch should really be in the body of this fn'
+          'rer not yet fetched; the fetch should really be in the body of this fn'
         )
 
       // TODO fetch in body

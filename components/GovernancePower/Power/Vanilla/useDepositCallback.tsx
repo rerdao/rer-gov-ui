@@ -15,7 +15,7 @@ import BN from 'bn.js'
 import { sendTransaction } from '@utils/send'
 import { fetchProgramVersion } from '@hooks/queries/useProgramVersionQuery'
 import queryClient from "@hooks/queries/queryClient";
-import {useJoinRealm} from "@hooks/useJoinRealm";
+import { useJoinRealm } from "@hooks/useJoinRealm";
 
 export const useDepositCallback = (
   role: 'community' | 'council' | 'undefined'
@@ -94,11 +94,11 @@ export const useDepositCallback = (
         successMessage: 'Tokens have been deposited',
       })
 
-        // Force the UI to recalculate voter weight
-        queryClient.invalidateQueries({
-            queryKey: ['calculateVoterWeight'],
-        })
+      // Force the UI to recalculate voter weight
+      queryClient.invalidateQueries({
+        queryKey: ['calculateVoterWeight'],
+      })
     },
-    [connection, realmPk, role, wallet, walletPk]
+    [connection, handleRegister, realmPk, role, wallet, walletPk]
   )
 }

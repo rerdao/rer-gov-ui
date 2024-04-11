@@ -4,8 +4,8 @@ import FormFooter from '@components/NewRealmWizard/components/FormFooter'
 import Header from '@components/Header'
 import Text from '@components/Text'
 
-import { FORM_NAME as MULTISIG_FORM } from 'pages/realms/new/multisig'
-import { FORM_NAME as COMMUNITY_TOKEN_FORM } from 'pages/realms/new/community-token'
+import { FORM_NAME as MULTISIG_FORM } from 'pages/rers/new/multisig'
+import { FORM_NAME as COMMUNITY_TOKEN_FORM } from 'pages/rers/new/community-token'
 import { GenericTokenIcon } from './TokenInfoTable'
 
 const TO_BE_GENERATED = '(To be generated)'
@@ -121,9 +121,8 @@ function CommunityInfo({
         <TokenInfoSummary title="Community token" {...updatedTokenInfo} />
       )}
       <div
-        className={`grid grid-cols-1 gap-2 ${
-          !nftIsCommunityToken ? 'sm:grid-cols-2' : ''
-        }`}
+        className={`grid grid-cols-1 gap-2 ${!nftIsCommunityToken ? 'sm:grid-cols-2' : ''
+          }`}
       >
         <SummaryModule title="Approval threshold">
           <Text level="0" className="input-base">
@@ -307,13 +306,12 @@ export default function WizardSummary({
         ctaText={
           type === MULTISIG_FORM
             ? 'Create wallet'
-            : `Create ${
-                type === COMMUNITY_TOKEN_FORM && !formData?.isQuadratic
-                  ? 'Community Token'
-                  : type === COMMUNITY_TOKEN_FORM && formData?.isQuadratic
-                  ? 'Quadratic Voting'
-                  : 'NFT Community'
-              } DAO`
+            : `Create ${type === COMMUNITY_TOKEN_FORM && !formData?.isQuadratic
+              ? 'Community Token'
+              : type === COMMUNITY_TOKEN_FORM && formData?.isQuadratic
+                ? 'Quadratic Voting'
+                : 'NFT Community'
+            } DAO`
         }
         prevClickHandler={() => onPrevClick(currentStep)}
         submitClickHandler={() => onSubmit(formData)}

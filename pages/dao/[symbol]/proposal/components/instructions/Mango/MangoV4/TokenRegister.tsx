@@ -263,7 +263,7 @@ const TokenRegister = ({
       ...form,
       tokenIndex: tokenIndex,
     })
-  }, [mangoGroup?.banksMapByTokenIndex.size])
+  }, [form, mangoGroup, mangoGroup?.banksMapByTokenIndex.size])
 
   const inputs: InstructionInput[] = [
     {

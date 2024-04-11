@@ -42,7 +42,7 @@ function getBorderColor(proposalState: ProposalState, otherState: OtherState) {
     case ProposalState.Vetoed:
       return 'border-transparent'
     case ProposalState.Executing:
-      return 'border-[#5DC9EB]'
+      return 'border-[#947fff]'
     case ProposalState.Draft:
       return otherState.isCreator ? 'border-white' : 'border-transparent'
     case ProposalState.SigningOff:
@@ -50,9 +50,9 @@ function getBorderColor(proposalState: ProposalState, otherState: OtherState) {
     case ProposalState.Succeeded:
       return !hasInstructions(otherState.proposal)
         ? 'border-transparent'
-        : 'border-[#5DC9EB]'
+        : 'border-[#947fff]'
     case ProposalState.Voting:
-      return otherState.votingEnded ? 'border-[#5DC9EB]' : 'border-[#8EFFDD]'
+      return otherState.votingEnded ? 'border-[#947fff]' : 'border-[#8EFFDD]'
     default:
       assertUnreachable(proposalState)
   }
@@ -83,8 +83,8 @@ function getLabel(
       return otherState.votingEnded
         ? 'Finalizing'
         : otherState.coolOff
-        ? 'Cool Off'
-        : 'Voting'
+          ? 'Cool Off'
+          : 'Voting'
     case ProposalState.Vetoed:
       return 'Vetoed'
     default:
@@ -132,13 +132,13 @@ function getTextColor(
     case ProposalState.ExecutingWithErrors:
       return 'text-[#FF7C7C]'
     case ProposalState.Executing:
-      return 'text-[#5DC9EB]'
+      return 'text-[#947fff]'
     case ProposalState.SigningOff:
       return 'text-[#F5A458]'
     case ProposalState.Succeeded:
       return !hasInstructions(otherState.proposal)
         ? 'text-[#8EFFDD]'
-        : 'text-[#5DC9EB]'
+        : 'text-[#947fff]'
     case ProposalState.Voting:
       return otherState.votingEnded
         ? 'bg-gradient-to-r from-[#00C2FF] via-[#00E4FF] to-[#87F2FF] bg-clip-text text-transparent'

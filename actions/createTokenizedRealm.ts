@@ -175,7 +175,7 @@ export default async function createTokenizedRealm({
       cluster: connection.rpcEndpoint.includes('devnet') ? 'devnet' : 'mainnet',
     }
     trySentryLog({
-      tag: 'realmCreated',
+      tag: 'rerCreated',
       objToStringify: logInfo,
     })
 

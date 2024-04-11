@@ -10,8 +10,8 @@ export default function EcosystemFeedItemComment() {
   return (
     <div>
       <Head>
-        <title>Realm</title>
-        <meta property="og:title" content="Realm" key="title" />
+        <title>RER</title>
+        <meta property="og:title" content="RER" key="title" />
       </Head>
       <FeedItemComment
         commentId={commentId as string}

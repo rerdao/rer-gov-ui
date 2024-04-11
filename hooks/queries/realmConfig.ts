@@ -14,10 +14,10 @@ import { useConnection } from '@solana/wallet-adapter-react'
 import queryClient from './queryClient'
 
 export const realmConfigQueryKeys = {
-  all: (endpoint: string) => [endpoint, 'RealmConfig'],
+  all: (endpoint: string) => [endpoint, 'RerConfig'],
   byRealm: (endpoint: string, k: PublicKey) => [
     ...realmConfigQueryKeys.all(endpoint),
-    'for Realm',
+    'for Rer',
     k,
   ],
 }

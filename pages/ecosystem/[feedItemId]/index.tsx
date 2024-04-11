@@ -10,8 +10,8 @@ export default function EcosystemFeedItem() {
   return (
     <div>
       <Head>
-        <title>Realm</title>
-        <meta property="og:title" content="Realm" key="title" />
+        <title>RER</title>
+        <meta property="og:title" content="RER" key="title" />
       </Head>
       <FeedItem feedItemId={feedItemId as string} realmUrlId="ecosystem" />
     </div>

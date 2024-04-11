@@ -35,8 +35,8 @@ export default function RealmFeedItemComment() {
   return (
     <div>
       <Head>
-        <title>Realm</title>
-        <meta property="og:title" content="Realm" key="title" />
+        <title>Rer</title>
+        <meta property="og:title" content="Rer" key="title" />
       </Head>
       <FeedItemComment
         commentId={commentId}

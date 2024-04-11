@@ -65,6 +65,7 @@ const MeanFundAccountComponent = ({ index, governance }: Props) => {
       },
       index
     )
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [form])
 
   // mint info

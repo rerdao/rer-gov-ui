@@ -11,7 +11,7 @@ import Text from '@components/Text'
 import AdviceBox from '@components/NewRealmWizard/components/AdviceBox'
 
 import { updateUserInput } from '@utils/formValidation'
-import { FORM_NAME as MUTISIG_FORM } from 'pages/realms/new/multisig'
+import { FORM_NAME as MUTISIG_FORM } from 'pages/rers/new/multisig'
 
 export const CommunityYesVotePercentageSchema = {
   communityYesVotePercentage: yup
@@ -79,8 +79,8 @@ export default function YesVotePercentageForm({
   const fieldName = forCommunity
     ? 'communityYesVotePercentage'
     : forCouncil
-    ? 'councilYesVotePercentage'
-    : 'yesVotePercentage'
+      ? 'councilYesVotePercentage'
+      : 'yesVotePercentage'
   const percentageValue = !formData.isQuadratic || !forCommunity ? 60 : 5
   const yesVotePercentage = watch(fieldName) || percentageValue
 
@@ -137,8 +137,8 @@ export default function YesVotePercentageForm({
           forCommunity
             ? 'Approval percentage'
             : forCouncil
-            ? 'Member percentage'
-            : 'Yes vote percentage'
+              ? 'Member percentage'
+              : 'Yes vote percentage'
         }
         icon={<img src="/icons/threshold-icon.svg" alt="voting icon" />}
       >

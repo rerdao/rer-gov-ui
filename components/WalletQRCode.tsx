@@ -5,7 +5,7 @@ import * as AspectRatio from '@radix-ui/react-aspect-ratio'
 import cx from 'classnames'
 import AutoSizer from 'react-virtualized-auto-sizer'
 
-import LogoRealms from 'public/img/logo-realms.png'
+import LogoRealms from 'public/img/logo-rer.png'
 
 interface Props {
   className?: string

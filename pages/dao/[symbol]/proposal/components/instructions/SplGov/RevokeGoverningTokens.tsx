@@ -161,6 +161,7 @@ const RevokeGoverningTokens: FC<{
       serializedInstruction: serializeInstructionToBase64(ix),
       governance: governance,
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     form.amount,
     form.memberKey,

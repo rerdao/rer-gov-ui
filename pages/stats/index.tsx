@@ -5,8 +5,8 @@ export default function Stats() {
   return (
     <>
       <Head>
-        <title>Realm</title>
-        <meta property="og:title" content="Realm" key="title" />
+        <title>RER</title>
+        <meta property="og:title" content="RER" key="title" />
       </Head>
       <GlobalStats />
     </>

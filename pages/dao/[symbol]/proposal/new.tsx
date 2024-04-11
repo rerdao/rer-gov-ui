@@ -450,17 +450,17 @@ const New = () => {
   // if a component needs specials attributes, use componentBuilderFunction object
   const instructionMap: {
     [key in Instructions]:
-      | ((props: {
-          index: number
-          governance: ProgramAccount<Governance> | null
-        }) => JSX.Element | null)
-      | {
-          componentBuilderFunction: (props: {
-            index: number
-            governance: ProgramAccount<Governance> | null
-          }) => JSX.Element | null
-        }
-      | null
+    | ((props: {
+      index: number
+      governance: ProgramAccount<Governance> | null
+    }) => JSX.Element | null)
+    | {
+      componentBuilderFunction: (props: {
+        index: number
+        governance: ProgramAccount<Governance> | null
+      }) => JSX.Element | null
+    }
+    | null
   } = useMemo(
     () => ({
       [Instructions.Burn]: BurnTokens,
@@ -601,6 +601,7 @@ const New = () => {
       [Instructions.RevokeGoverningTokens]: RevokeGoverningTokens,
       [Instructions.SetMintAuthority]: SetMintAuthority,
     }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [governance?.pubkey?.toBase58()]
   )
 
@@ -642,9 +643,8 @@ const New = () => {
   return (
     <div className="grid grid-cols-12 gap-4">
       <div
-        className={`bg-bkg-2 col-span-12 md:col-span-7 md:order-first lg:col-span-8 order-last p-4 md:p-6 rounded-lg space-y-3 ${
-          isLoading ? 'pointer-events-none' : ''
-        }`}
+        className={`bg-bkg-2 col-span-12 md:col-span-7 md:order-first lg:col-span-8 order-last p-4 md:p-6 rounded-lg space-y-3 ${isLoading ? 'pointer-events-none' : ''
+          }`}
       >
         <>
           <PreviousRouteBtn></PreviousRouteBtn>
@@ -721,14 +721,14 @@ const New = () => {
                 })}
               />
             </div>
-              {shouldShowVoteByCouncilToggle && (
-                  <VoteBySwitch
-                      checked={voteByCouncil}
-                      onChange={() => {
-                          setVoteByCouncil(!voteByCouncil)
-                      }}
-                  ></VoteBySwitch>
-              )}
+            {shouldShowVoteByCouncilToggle && (
+              <VoteBySwitch
+                checked={voteByCouncil}
+                onChange={() => {
+                  setVoteByCouncil(!voteByCouncil)
+                }}
+              ></VoteBySwitch>
+            )}
             <div className="max-w-lg w-full mb-4 flex flex-wrap gap-2 justify-between items-end">
               <div className="flex grow basis-0">
                 <ProposalTypeRadioButton

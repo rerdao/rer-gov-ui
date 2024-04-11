@@ -31,13 +31,13 @@ import Select from '@components/inputs/Select'
 import { tryGetRegistrar } from 'VoteStakeRegistry/sdk/api'
 import { fmtMintAmount } from '@tools/sdk/units'
 import tokenPriceService from '@utils/services/tokenPrice'
-import { getClawbackInstruction } from 'VoteStakeRegistry/actions/getClawbackInstruction'
+import { getClawbackInstruction } from 'VoteStakeRegistry/actions/getClawbackInstruction.1'
 import { abbreviateAddress } from '@utils/formatting'
 import { AssetAccount } from '@utils/uiTypes/assets'
 import { useRealmQuery } from '@hooks/queries/realm'
 import useLegacyConnectionContext from '@hooks/useLegacyConnectionContext'
 import Input from '@components/inputs/Input'
-import {useVsrClient} from "VoterWeightPlugins/useVsrClient";
+import { useVsrClient } from "VoterWeightPlugins/useVsrClient";
 
 const Clawback = ({
   index,
@@ -142,9 +142,9 @@ const Clawback = ({
   useEffect(() => {
     const getVoters = async () => {
       const { registrar } = getRegistrarPDA(
-          realm!.pubkey,
-          realm!.account.communityMint,
-          vsrClient!.program.programId
+        realm!.pubkey,
+        realm!.account.communityMint,
+        vsrClient!.program.programId
       )
       const resp = await vsrClient?.program.account.voter.all([
         {
@@ -162,7 +162,7 @@ const Clawback = ({
                 (depo) => depo.allowClawback
               ).length
           )
-            // The cast works around an anchor issue with interpreting enums
+          // The cast works around an anchor issue with interpreting enums
           .map((x) => x.account as unknown as Voter) || []
 
       setVoters([...voters])
@@ -174,9 +174,9 @@ const Clawback = ({
   useEffect(() => {
     const getOwnedDepositsInfo = async () => {
       const { registrar } = getRegistrarPDA(
-          realm!.pubkey,
-          realm!.account.communityMint,
-          vsrClient!.program.programId
+        realm!.pubkey,
+        realm!.account.communityMint,
+        vsrClient!.program.programId
       )
       const existingRegistrar = await tryGetRegistrar(registrar, vsrClient!)
       const mintCfgs = existingRegistrar?.votingMints
@@ -220,13 +220,13 @@ const Clawback = ({
   const getOwnedDepositsLabel = (deposit: DepositWithMintAccount | null) => {
     const symbol = deposit
       ? tokenPriceService.getTokenInfo(deposit.mint.publicKey.toBase58())
-          ?.symbol || ''
+        ?.symbol || ''
       : null
     return deposit
       ? `${fmtMintAmount(
-          deposit.mint.account,
-          deposit.amountDepositedNative
-        )} ${symbol ? symbol : abbreviateAddress(deposit.mint.publicKey)}`
+        deposit.mint.account,
+        deposit.amountDepositedNative
+      )} ${symbol ? symbol : abbreviateAddress(deposit.mint.publicKey)}`
       : null
   }
   return (
@@ -240,12 +240,12 @@ const Clawback = ({
         wallet:{' '}
         {realmAuthorityGov
           ? PublicKey.findProgramAddressSync(
-              [
-                Buffer.from('native-treasury'),
-                realmAuthorityGov!.pubkey.toBuffer(),
-              ],
-              realm!.owner
-            )[0].toBase58()
+            [
+              Buffer.from('native-treasury'),
+              realmAuthorityGov!.pubkey.toBuffer(),
+            ],
+            realm!.owner
+          )[0].toBase58()
           : null}
       </p>
       <Select

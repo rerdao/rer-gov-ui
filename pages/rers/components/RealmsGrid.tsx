@@ -21,30 +21,27 @@ const RealmBox = React.forwardRef<HTMLDivElement, IRealmBox>(
   ({ onClick, editing, realm, theme, removeItem, inGrid = false }, ref) => (
     <div className="relative h-full w-full group" onClick={onClick} ref={ref}>
       <div
-        className={`flex relative w-full h-full flex-col items-center justify-center overflow-hidden p-8 rounded-lg cursor-pointer default-transition active:cursor-grabbing ${
-          editing
-            ? ` bg-bkg-4 cursor-grab opacity-75 group-hover:opacity-90`
-            : `hover:bg-bkg-3 bg-bkg-2`
-        }`}
+        className={`flex relative w-full h-full flex-col items-center justify-center overflow-hidden p-8 rounded-lg cursor-pointer default-transition active:cursor-grabbing ${editing
+          ? ` bg-bkg-4 cursor-grab opacity-75 group-hover:opacity-90`
+          : `hover:bg-bkg-3 bg-bkg-2`
+          }`}
       >
         <div className="pb-5">
           {realm.ogImage ? (
             <div
-              className={`${
-                theme === 'Dark'
-                  ? 'bg-[rgba(255,255,255,0.06)]'
-                  : 'bg-[rgba(0,0,0,0.06)]'
-              } rounded-full h-16 w-16 flex items-center justify-center`}
+              className={`${theme === 'Dark'
+                ? 'bg-[rgba(255,255,255,0.06)]'
+                : 'bg-[rgba(0,0,0,0.06)]'
+                } rounded-full h-16 w-16 flex items-center justify-center`}
             >
               <img className="w-10" src={realm.ogImage}></img>
             </div>
           ) : (
             <div
-              className={`${
-                theme === 'Dark'
-                  ? 'bg-[rgba(255,255,255,0.06)]'
-                  : 'bg-[rgba(0,0,0,0.06)]'
-              } h-16 w-16 flex font-bold items-center justify-center rounded-full text-fgd-3`}
+              className={`${theme === 'Dark'
+                ? 'bg-[rgba(255,255,255,0.06)]'
+                : 'bg-[rgba(0,0,0,0.06)]'
+                } h-16 w-16 flex font-bold items-center justify-center rounded-full text-fgd-3`}
             >
               {realm.displayName?.charAt(0)}
             </div>
@@ -184,10 +181,9 @@ function RealmsGrid({
       {(gridRealms?.length > 0 || editing) && (
         <div
           ref={gridRef}
-          className={`pb-4 ${
-            editing &&
+          className={`pb-4 ${editing &&
             `border-bgk-5 border-dashed border-y-2 bg-bkg-2 !sticky backdrop-blur z-10 min-h-[200px]`
-          }`}
+            }`}
           style={{
             top: `${top}px`,
           }}
@@ -243,8 +239,8 @@ function RealmsGrid({
                       onMouseDown={
                         editing
                           ? () => {
-                              setDraggedItem(realm)
-                            }
+                            setDraggedItem(realm)
+                          }
                           : () => null
                       }
                       // this is a hack for firefox

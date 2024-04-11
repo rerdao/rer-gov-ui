@@ -178,7 +178,7 @@ export const graphcache = async (
 
           if (currentPost) {
             return {
-              __typename: 'RealmFeedItemPost',
+              __typename: 'RerFeedItemPost',
               ...currentPost,
               id: args.feedItemId,
               myVote: newVote,
@@ -188,7 +188,7 @@ export const graphcache = async (
 
           if (currentProposal) {
             return {
-              __typename: 'RealmFeedItemProposal',
+              __typename: 'RerFeedItemProposal',
               ...currentProposal,
               id: args.feedItemId,
               myVote: newVote,
@@ -240,7 +240,7 @@ export const graphcache = async (
           }
 
           return {
-            __typename: 'RealmFeedItemComment',
+            __typename: 'RerFeedItemComment',
             ...comment,
             id: args.commentId,
             myVote: newVote,

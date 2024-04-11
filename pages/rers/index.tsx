@@ -89,7 +89,7 @@ const Realms = () => {
         return notify({ message, type: 'error' })
       }
     }
-    router.push(fmtUrlWithCluster(`/realms/new`))
+    router.push(fmtUrlWithCluster(`/rers/new`))
   }
   const sortDaos = (realmInfoData: RealmInfo[]) => {
     return realmInfoData.sort((a: RealmInfo, b: RealmInfo) => {

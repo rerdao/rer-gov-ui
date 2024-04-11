@@ -86,7 +86,7 @@ export default async function createNFTRealm({
     .instruction()
 
   console.log(
-    'CREATE NFT REALM registrar PDA',
+    'CREATE NFT RER registrar PDA',
     registrar.toBase58(),
     instructionCR
   )
@@ -108,7 +108,7 @@ export default async function createNFTRealm({
     })
     .instruction()
   console.log(
-    'CREATE NFT REALM max voter weight record',
+    'CREATE NFT RER max voter weight record',
     maxVoterWeightRecord.toBase58(),
     instructionMVWR
   )
@@ -227,7 +227,7 @@ export default async function createNFTRealm({
       cluster: connection.rpcEndpoint.includes('devnet') ? 'devnet' : 'mainnet',
     }
     trySentryLog({
-      tag: 'realmCreated',
+      tag: 'rerCreated',
       objToStringify: logInfo,
     })
 

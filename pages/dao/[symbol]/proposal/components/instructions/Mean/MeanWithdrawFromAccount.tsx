@@ -63,6 +63,7 @@ const MeanWithdrawFromAccountComponent = ({ index, governance }: Props) => {
       },
       index
     )
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [form])
 
   // amount
@@ -109,7 +110,7 @@ const MeanWithdrawFromAccountComponent = ({ index, governance }: Props) => {
       governedTokenAccountsWithoutNfts.find(
         (acc) =>
           acc.governance.pubkey.toBase58() ===
-            formPaymentStreamingAccount.owner.toString() && acc.isSol
+          formPaymentStreamingAccount.owner.toString() && acc.isSol
       )
     setForm((prevForm) => ({
       ...prevForm,

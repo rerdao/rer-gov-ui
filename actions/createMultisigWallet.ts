@@ -71,7 +71,7 @@ export default async function createMultisigWallet({
       cluster: connection.rpcEndpoint.includes('devnet') ? 'devnet' : 'mainnet',
     }
     trySentryLog({
-      tag: 'realmCreated',
+      tag: 'rerCreated',
       objToStringify: logInfo,
     })
 

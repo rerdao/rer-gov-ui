@@ -10,7 +10,7 @@ import { abbreviateAddress } from '@utils/formatting'
 import { useCallback, useEffect, useState } from 'react'
 import Switch from './Switch'
 import { notify } from '@utils/notifications'
-import {Profile, ProfileImage} from '@components/Profile'
+import { Profile, ProfileImage } from '@components/Profile'
 import Loading from './Loading'
 import { WalletName, WalletReadyState } from '@solana/wallet-adapter-base'
 import { useWallet } from '@solana/wallet-adapter-react'
@@ -90,11 +90,10 @@ const ConnectWalletButton = (props) => {
     <div className="flex">
       <div
         disabled={connected}
-        className={`bg-bkg-2 hover:bg-bkg-3  border border-fgd-4 border-r-0 default-transition flex h-12 items-center pl-4 pr-3 sm:pl-1 sm:pr-2 rounded-l-full rounded-r-none ${
-          connected
+        className={`bg-bkg-2 hover:bg-bkg-3  border border-fgd-4 border-r-0 default-transition flex h-12 items-center pl-4 pr-3 sm:pl-1 sm:pr-2 rounded-l-full rounded-r-none ${connected
             ? 'cursor-default'
             : 'cursor-pointer hover:bg-bkg-3 focus:outline-none'
-        }`}
+          }`}
         onClick={handleConnectDisconnect}
         {...props}
       >
@@ -120,12 +119,12 @@ const ConnectWalletButton = (props) => {
             {connected && publicKey ? (
               <>
                 {connected && publicKey ? (
-                    <ProfileName
-                        publicKey={publicKey}
-                        width="100px"
-                        height="20px"
-                        dark={true}
-                    />
+                  <ProfileName
+                    publicKey={publicKey}
+                    width="100px"
+                    height="20px"
+                    dark={true}
+                  />
                 ) : null}
                 <StyledWalletProviderLabel className="font-normal text-fgd-3">
                   {walletAddressFormatted}
@@ -151,9 +150,8 @@ const ConnectWalletButton = (props) => {
                 className={`border bg-bkg-2 border-fgd-4 cursor-pointer default-transition h-12 w-12 py-2 px-2 rounded-r-full hover:bg-bkg-3 focus:outline-none`}
               >
                 <ChevronDownIcon
-                  className={`${
-                    open ? 'transform rotate-180' : 'transform rotate-360'
-                  } default-transition h-5 m-auto ml-1 text-primary-light w-5`}
+                  className={`${open ? 'transform rotate-180' : 'transform rotate-360'
+                    } default-transition h-5 m-auto ml-1 text-primary-light w-5`}
                 />
               </Menu.Button>
               <Menu.Items className="absolute right-0 z-20 w-48 p-2 border rounded-md shadow-md outline-none bg-bkg-1 border-fgd-4 top-14">

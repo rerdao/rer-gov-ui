@@ -53,7 +53,7 @@ const getVotingClient = async (
 ) => {
   const { result: realm } = await fetchRealmByPubkey(connection, realmPk)
   if (realm === undefined) {
-    throw new Error('Realm not found')
+    throw new Error('Rer not found')
   }
 
 } */
@@ -141,7 +141,7 @@ const DaoVote = ({
           realmPk
         )
         if (realm === undefined) {
-          throw new Error('Realm not found')
+          throw new Error('Rer not found')
         }
         const governingMint = proposal.account.governingTokenMint
 
@@ -212,19 +212,19 @@ const DaoVote = ({
         const vote =
           form.voteOption === 'Yes'
             ? new Vote({
-                voteType: VoteKind.Approve,
-                approveChoices: [
-                  new VoteChoice({ rank: 0, weightPercentage: 100 }),
-                ],
-                deny: undefined,
-                veto: undefined,
-              })
+              voteType: VoteKind.Approve,
+              approveChoices: [
+                new VoteChoice({ rank: 0, weightPercentage: 100 }),
+              ],
+              deny: undefined,
+              veto: undefined,
+            })
             : new Vote({
-                voteType: VoteKind.Deny,
-                approveChoices: undefined,
-                deny: true,
-                veto: undefined,
-              })
+              voteType: VoteKind.Deny,
+              approveChoices: undefined,
+              deny: true,
+              veto: undefined,
+            })
 
         const tokenMint = governingMint
 
@@ -290,7 +290,7 @@ const DaoVote = ({
             propertyName: 'proposal',
           })
         }
-        error={formErrors['realm']}
+        error={formErrors['rer']}
       />
       <Select
         className="break-all"

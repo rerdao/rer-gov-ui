@@ -56,6 +56,7 @@ const InitStrike = ({
       { governedAccount: governedAccount, getInstruction },
       index
     )
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [form])
   useEffect(() => {
     setGovernedAccount(form.baseTreasury?.governance)

@@ -158,39 +158,41 @@ const CloseVaults = ({
     )
     setDistribution(distribution)
   }
-  const fetchVaults = async () => {
-    if (!client || !distribution) return
-    const v: any = {}
-    for (let i = 0; i < distribution.metadata!.mints.length; i++) {
-      const mint = distribution.metadata!.mints[i]
-      const type = mint.properties.type
-      const vaultAddress = distribution.findVaultAddress(
-        new PublicKey(mint.address)
-      )
-      try {
-        const tokenAccount = await tryGetTokenAccount(
-          connection.current,
-          vaultAddress
-        )
 
-        v[vaultAddress.toString()] = {
-          publicKey: vaultAddress,
-          amount: tokenAccount?.account.amount,
-          mint: tokenAccount?.account.mint,
-          mintIndex: i,
-          type: type,
-        }
-      } catch {
-        v[vaultAddress.toString()] = { amount: -1, mintIndex: i }
-      }
-    }
-    setVaults(v)
-  }
   useEffect(() => {
+    const fetchVaults = async () => {
+      if (!client || !distribution) return
+      const v: any = {}
+      for (let i = 0; i < distribution.metadata!.mints.length; i++) {
+        const mint = distribution.metadata!.mints[i]
+        const type = mint.properties.type
+        const vaultAddress = distribution.findVaultAddress(
+          new PublicKey(mint.address)
+        )
+        try {
+          const tokenAccount = await tryGetTokenAccount(
+            connection.current,
+            vaultAddress
+          )
+
+          v[vaultAddress.toString()] = {
+            publicKey: vaultAddress,
+            amount: tokenAccount?.account.amount,
+            mint: tokenAccount?.account.mint,
+            mintIndex: i,
+            type: type,
+          }
+        } catch {
+          v[vaultAddress.toString()] = { amount: -1, mintIndex: i }
+        }
+      }
+      setVaults(v)
+    }
     if (distribution) {
       fetchVaults()
     }
-  }, [distribution])
+  }, [client, connection, distribution])
+
   useEffect(() => {
     const client = new MangoMintsRedemptionClient(
       new AnchorProvider(
@@ -200,7 +202,8 @@ const CloseVaults = ({
       )
     )
     setClient(client)
-  }, [])
+  }, [connection])
+
   useEffect(() => {
     handleSetInstructions(
       { governedAccount: form.governedAccount?.governance, getInstruction },
@@ -254,23 +257,23 @@ const CloseVaults = ({
                 <div>
                   {vaults
                     ? Object.entries(vaults).map(([address, vault]) => {
-                        return (
-                          <div key={address} className="flex justify-between">
-                            <p>{address}</p>{' '}
-                            <p>
-                              {
-                                distribution.metadata!.mints[vault.mintIndex]
-                                  .properties?.name
-                              }
-                            </p>{' '}
-                            <span>
-                              {vault.amount > -1
-                                ? vault.amount.toString()
-                                : 'Deleted'}
-                            </span>
-                          </div>
-                        )
-                      })
+                      return (
+                        <div key={address} className="flex justify-between">
+                          <p>{address}</p>{' '}
+                          <p>
+                            {
+                              distribution.metadata!.mints[vault.mintIndex]
+                                .properties?.name
+                            }
+                          </p>{' '}
+                          <span>
+                            {vault.amount > -1
+                              ? vault.amount.toString()
+                              : 'Deleted'}
+                          </span>
+                        </div>
+                      )
+                    })
                     : 'Loading...'}
                 </div>
               </span>

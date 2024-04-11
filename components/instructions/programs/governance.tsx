@@ -446,10 +446,10 @@ export const GOVERNANCE_INSTRUCTIONS = {
       },
     },
     21: {
-      name: 'Set Realm Authority',
+      name: 'Set RER Authority',
       accounts: [
-        { name: 'Realm' },
-        { name: 'Realm Authority' },
+        { name: 'RER' },
+        { name: 'RER Authority' },
         { name: 'New Realm Authority' },
       ],
       getDataUI: async (

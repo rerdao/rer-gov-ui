@@ -91,7 +91,7 @@ export default function CivicPassSelector({
       </DropdownMenu.Root>
       {!selectedPassState.isSybilResistance && (
         <div className="body-sm mt-2">
-          <span className="text-[#5DC9EB]">Warning:</span> This pass type does
+          <span className="text-[#947fff]">Warning:</span> This pass type does
           not provide sybil resistance.
         </div>
       )}

@@ -1,4 +1,4 @@
-// Exposes a 'realms-friendly' version of the generic useVoterWeightPlugins hook,
+// Exposes a 'rer-friendly' version of the generic useVoterWeightPlugins hook,
 // which knows how to get the current realm, governance mint, and wallet public keys
 // this simplifies usage across the realms codebase
 import { useVoterWeightPlugins } from '../VoterWeightPlugins'

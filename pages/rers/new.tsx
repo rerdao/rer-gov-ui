@@ -10,19 +10,19 @@ const New: React.FC = () => {
   const { fmtUrlWithCluster } = useQueryContext()
   const DAO_TYPES = [
     {
-      url: '/realms/new/community-token',
+      url: '/rers/new/community-token',
       name: 'Community Token DAO',
       description:
         'DAO members use a community token to denote their membership and allow them to vote on proposals.',
     },
     {
-      url: '/realms/new/multisig',
+      url: '/rers/new/multisig',
       name: 'Multi-Signature Wallet',
       description:
         'A "multisig" is a shared wallet, typically with two or more members authorizing transactions.',
     },
     {
-      url: '/realms/new/nft',
+      url: '/rers/new/nft',
       name: 'NFT Community DAO',
       description:
         'NFT Community DAOs leverage NFTs as membership, giving NFT holders voting power to make decisions.',
@@ -31,7 +31,7 @@ const New: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Create new DAO | RER</title>
+        <title>Create a new DAO </title>
       </Head>
       <Header as="h2" className="mt-8 ">
         Choose which <br />
@@ -54,12 +54,12 @@ const New: React.FC = () => {
         </div>
         <div className="flex items-center justify-center px-4 mt-10 space-x-8">
           <a
-            href="https://governance-docs.vercel.app/"
+            href="https://rer-dao.gitbook.io/rerdao-docs"
             target="_blank"
             rel="noopener noreferrer"
           >
             <div className="rounded px-3 py-1.5 hover:text-primary-dark default-transition cursor-pointer underline">
-              <span className="text-sm font-semibold">Tutorial Docs</span>
+              <span className="text-sm font-semibold">Documentation</span>
             </div>
           </a>
         </div>

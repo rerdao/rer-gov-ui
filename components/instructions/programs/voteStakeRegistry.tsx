@@ -56,7 +56,7 @@ const clawbackIx = (programId: PublicKey) => ({
     name: 'Clawback',
     accounts: [
       { name: 'Registrar' },
-      { name: 'Realm authority' },
+      { name: 'Rer authority' },
       { name: 'Voter' },
       { name: 'Vault' },
       { name: 'Destination' },

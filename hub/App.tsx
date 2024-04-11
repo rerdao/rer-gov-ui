@@ -138,8 +138,8 @@ export function App(props: Props) {
         <link
           rel="icon"
           type="image/png"
-          sizes="32x32"
-          href="/favicons/favicon-32x32.png"
+          sizes="48x37"
+          href="/favicons/favicon-48x37.png"
         />
         <link
           rel="icon"
@@ -150,8 +150,8 @@ export function App(props: Props) {
         <link
           rel="icon"
           type="image/png"
-          sizes="16x16"
-          href="/favicons/favicon-16x16.png"
+          sizes="32x25"
+          href="/favicons/favicon-32x25.png"
         />
         <style>{`
           body {

@@ -11,7 +11,7 @@ import FormFooter from '@components/NewRealmWizard/components/FormFooter'
 import Input from '@components/NewRealmWizard/components/Input'
 
 import { updateUserInput, validateSolAddress } from '@utils/formValidation'
-import { FORM_NAME as MULTISIG_FORM } from 'pages/realms/new/multisig'
+import { FORM_NAME as MULTISIG_FORM } from 'pages/rers/new/multisig'
 import { textToAddressList } from '@utils/textToAddressList'
 import useWalletOnePointOh from '@hooks/useWalletOnePointOh'
 
@@ -120,8 +120,8 @@ export const InviteMembersSchema = {
       } else {
         return addCouncil
           ? schema
-              .min(1, 'A DAO needs at least one member')
-              .required('Required')
+            .min(1, 'A DAO needs at least one member')
+            .required('Required')
           : schema
       }
     }) as ConditionBuilder<any>),
@@ -164,7 +164,7 @@ export default function InviteMembersForm({
       if (
         formData.useExistingCouncilToken &&
         formData.councilTokenInfo?.mint?.mintAuthority?.toBase58() !==
-          userAddress
+        userAddress
       ) {
         setLackMintAuthority(true)
         setInviteList([])
@@ -281,9 +281,8 @@ export default function InviteMembersForm({
         type={type}
         currentStep={currentStep}
         totalSteps={totalSteps}
-        title={`Next, invite${
-          type === MULTISIG_FORM ? ' ' : ' council '
-        }members with their Solana Wallet Address.`}
+        title={`Next, invite${type === MULTISIG_FORM ? ' ' : ' council '
+          }members with their Solana Wallet Address.`}
       />
       <div className="mt-24 space-y-10 md:space-y-12">
         <FormField

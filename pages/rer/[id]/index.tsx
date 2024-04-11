@@ -23,8 +23,8 @@ export default function Realm() {
   return (
     <div>
       <Head>
-        <title>Realm</title>
-        <meta property="og:title" content="Realm" key="title" />
+        <title>RER</title>
+        <meta property="og:title" content="RER" key="title" />
       </Head>
       <Home realmUrlId={id as string} />
     </div>

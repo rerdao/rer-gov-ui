@@ -8,27 +8,27 @@ import { PROGRAM_ID as HELIUM_VSR_PROGRAM_ID } from '@helium/voter-stake-registr
 import { NAME_PROGRAM_ID } from '@bonfida/spl-name-service'
 
 const GOVERNANCE_PROGRAM_NAMES = {
-  // GqTPL6qRf5aUuqscLh8Rg2HTxPUXfhhAXDptTLhp1t2J: 'Mango Governance Program',
-  // FP4PxqHTVzeG2c6eZd7974F9WvKUSdBeduUK3rjYyvBw: 'Mango v4 Program Governance ',
-  // '89VDjvzxfNLN7EgkvkNZ4VWpskBuiuZtHkLpYJd3ynEY':
-  //   'Mango v4 Program Governance Wallet',
-  // AVoAYTs36yB5izAaBkxRG67wL1AMwG3vo41hKtUSb8is:
-  //   'Serum Governance Program (Old)',
-  // G41fmJzd29v7Qmdi8ZyTBBYa98ghh3cwHBTexqCG1PQJ:
-  //   'Serum Governance Program (New)',
-  // FBcTbv5rLy7MQkkAU2uDzAEjjZDeu2BVLVRJGxyz6hnV:
-    // 'Serum Governance Token Program',
+  GqTPL6qRf5aUuqscLh8Rg2HTxPUXfhhAXDptTLhp1t2J: 'Mango Governance Program',
+  FP4PxqHTVzeG2c6eZd7974F9WvKUSdBeduUK3rjYyvBw: 'Mango v4 Program Governance ',
+  '89VDjvzxfNLN7EgkvkNZ4VWpskBuiuZtHkLpYJd3ynEY':
+    'Mango v4 Program Governance Wallet',
+  AVoAYTs36yB5izAaBkxRG67wL1AMwG3vo41hKtUSb8is:
+    'Serum Governance Program (Old)',
+  G41fmJzd29v7Qmdi8ZyTBBYa98ghh3cwHBTexqCG1PQJ:
+    'Serum Governance Program (New)',
+  FBcTbv5rLy7MQkkAU2uDzAEjjZDeu2BVLVRJGxyz6hnV:
+    'Serum Governance Token Program',
   GTesTBiEWE32WHXXE2S4XbZvA5CrEc4xs6ZgRe895dP: 'Test Governance Program',
   GovER5Lthms3bLBqWub97yVrMmEogzX7xNjdXpPPCVZw: 'Governance Program',
-  // '5sGZEdn32y8nHax7TxEyoHuPS3UXfPWtisgm8kqxat8H':
-  //   'Phantasia Governance Program',
-  // smfjietFKFJ4Sbw1cqESBTpPhF4CwbMwN8kBEC1e5ui:
-  //   'Strangemood Foundation Governance Program',
-  // GovHgfDPyQ1GwazJTDY2avSVY8GGcpmCapmmCsymRaGe: 'PSY DO Governance Program',
-  // '7e75Nwsz8i5i4NiDa43CNzKJ4AeQGyRimha46VKTM1Ls': 'spl-governance v3 test',
-  // MGovW65tDhMMcpEmsegpsdgvzb6zUwGsNjhXFxRAnjd: 'MEAN DAO Governance Program',
-  // GovMaiHfpVPw8BAM1mbdzgmSZYDw2tdP32J2fapoQoYs: 'Marinade Governance Program',
-  // hgovkRU6Ghe1Qoyb54HdSLdqN7VtxaifBzRmh9jtd3S: 'Helium Governance Program',
+  '5sGZEdn32y8nHax7TxEyoHuPS3UXfPWtisgm8kqxat8H':
+    'Phantasia Governance Program',
+  smfjietFKFJ4Sbw1cqESBTpPhF4CwbMwN8kBEC1e5ui:
+    'Strangemood Foundation Governance Program',
+  GovHgfDPyQ1GwazJTDY2avSVY8GGcpmCapmmCsymRaGe: 'PSY DO Governance Program',
+  '7e75Nwsz8i5i4NiDa43CNzKJ4AeQGyRimha46VKTM1Ls': 'spl-governance v3 test',
+  MGovW65tDhMMcpEmsegpsdgvzb6zUwGsNjhXFxRAnjd: 'MEAN DAO Governance Program',
+  GovMaiHfpVPw8BAM1mbdzgmSZYDw2tdP32J2fapoQoYs: 'Marinade Governance Program',
+  hgovkRU6Ghe1Qoyb54HdSLdqN7VtxaifBzRmh9jtd3S: 'Helium Governance Program',
 }
 
 // Well known program names displayed on the instruction card
@@ -36,10 +36,10 @@ const PROGRAM_NAMES = {
   TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA: 'Token Program',
   ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL: 'ATA Program',
   '11111111111111111111111111111111': 'System Program',
-  // '4MangoMjqJ2firMokCjjGgoK8d4MXcrgL7XJaL3w6fVg': 'Mango v4 Program',
-  // mv3ekLzLbnVPNxjSKvqBpU3ZeZXPQdEC3bp5MDEBG68: 'Mango v3 Program',
-  // '9xQeWvG816bUx9EPjHmaT23yvVM2ZWbrrpZb9PusVFin': 'Serum v3 Program',
-  // DESVgJVGajEgKGXhb6XmqDHGz3VjdgP7rEVESBgxmroY: 'Serum v3 Program (devnet)',
+  '4MangoMjqJ2firMokCjjGgoK8d4MXcrgL7XJaL3w6fVg': 'Mango v4 Program',
+  mv3ekLzLbnVPNxjSKvqBpU3ZeZXPQdEC3bp5MDEBG68: 'Mango v3 Program',
+  '9xQeWvG816bUx9EPjHmaT23yvVM2ZWbrrpZb9PusVFin': 'Serum v3 Program',
+  DESVgJVGajEgKGXhb6XmqDHGz3VjdgP7rEVESBgxmroY: 'Serum v3 Program (devnet)',
 
   BPFLoaderUpgradeab1e11111111111111111111111: 'BPF Upgradeable Loader',
 

@@ -25,7 +25,7 @@ const useDelegators = (role: 'community' | 'council' | undefined) => {
 /* 
 const fetchDelegators = async (connection: Connection, walletPk: PublicKey, realmPk: PublicKey, role: 'community' | 'council' | undefined) => {
   const realm = (await fetchRealmByPubkey(connection, realmPk)).result
-  if (realm === undefined) {throw new Error('Realm not found')}
+  if (realm === undefined) {throw new Error('Rer not found')}
   
   const relevantMint =
     role && role === 'community'

@@ -102,7 +102,7 @@ const MeanCreateStreamComponent = ({ index, governance }: Props) => {
       governedTokenAccountsWithoutNfts.find(
         (acc) =>
           acc.governance.pubkey.toBase58() ===
-            formPaymentStreamingAccount.owner.toString() && acc.isSol
+          formPaymentStreamingAccount.owner.toString() && acc.isSol
       )
     setForm((prevForm) => ({
       ...prevForm,
@@ -110,6 +110,7 @@ const MeanCreateStreamComponent = ({ index, governance }: Props) => {
     }))
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     JSON.stringify(governedTokenAccountsWithoutNfts),
     formPaymentStreamingAccount,
   ])

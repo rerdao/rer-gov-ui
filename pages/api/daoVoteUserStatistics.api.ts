@@ -53,7 +53,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   if (!daoPk) {
-    res.status(500).json({ error: 'Realm not found' })
+    res.status(500).json({ error: 'Rer not found' })
   }
 
   const realm = await getRealm(conn, daoPk!)

@@ -13,7 +13,7 @@ import { DEFAULT_GOVERNANCE_PROGRAM_ID } from '@components/instructions/tools'
 
 import { updateUserInput, validateSolAddress } from '@utils/formValidation'
 
-import { FORM_NAME as MUTISIG_FORM } from 'pages/realms/new/multisig'
+import { FORM_NAME as MUTISIG_FORM } from 'pages/rers/new/multisig'
 import { useProgramVersionByIdQuery } from '@hooks/queries/useProgramVersionQuery'
 import { PublicKey } from '@solana/web3.js'
 
@@ -110,8 +110,8 @@ export default function BasicDetailsForm({
               <Input
                 placeholder={
                   type === MUTISIG_FORM
-                    ? 'e.g. Realms wallet'
-                    : 'e.g. Realms DAO'
+                    ? 'e.g. RER wallet'
+                    : 'e.g. RER DAO'
                 }
                 data-testid="dao-name-input"
                 error={errors.name?.message || ''}
@@ -138,17 +138,17 @@ export default function BasicDetailsForm({
                   autoComplete="on"
                   success={
                     !programVersionQuery.isLoading &&
-                    programVersionQuery.data !== 1
+                      programVersionQuery.data !== 1
                       ? `Program version ${programVersionQuery.data}`
                       : undefined
                   }
                   warning={
                     !programVersionQuery.isLoading &&
-                    programVersionQuery.data === 1
+                      programVersionQuery.data === 1
                       ? 'Program version could not be verified'
                       : programVersionQuery.isFetching
-                      ? 'Fetching program version...'
-                      : undefined
+                        ? 'Fetching program version...'
+                        : undefined
                   }
                   {...field}
                 />

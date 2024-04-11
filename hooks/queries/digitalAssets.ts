@@ -179,7 +179,7 @@ export const dasByIdQueryFn = async (network: Network, id: PublicKey) => {
     },
     body: JSON.stringify({
       jsonrpc: '2.0',
-      id: 'Realms user',
+      id: 'Rers user',
       method: 'getAsset',
       params: {
         id: id.toString(),
@@ -230,7 +230,7 @@ const dasByOwnerQueryFn = async (network: Network, owner: PublicKey) => {
       },
       body: JSON.stringify({
         jsonrpc: '2.0',
-        id: 'Realms user',
+        id: 'Rers user',
         method: 'getAssetsByOwner',
         params: {
           ownerAddress: owner.toString(),
@@ -310,7 +310,7 @@ const dasProofByIdQueryFn = async (network: Network, id: PublicKey) => {
     },
     body: JSON.stringify({
       jsonrpc: '2.0',
-      id: 'Realms user',
+      id: 'Rers user',
       method: 'getAssetProof',
       params: {
         id: id.toString(),

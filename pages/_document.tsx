@@ -61,10 +61,10 @@ class RealmsDocument extends Document {
           />
           <meta
             property="twitter:image"
-            content="https://raw.githubusercontent.com/solana-labs/governance-ui/main/public/img/logo-realms.png"
+            content="https://raw.githubusercontent.com/solana-labs/governance-ui/main/public/img/logo-rer.png"
           />
           <meta name="theme-color" content="#ffffff" />
-          <meta name="twitter:title" content="Realms" />
+          <meta name="twitter:title" content="RER" />
           <meta property="og:type" content="website" />
           <meta name="twitter:card" content="summary" />
         </Head>

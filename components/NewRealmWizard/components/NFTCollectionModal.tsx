@@ -82,7 +82,7 @@ export const useOwnerVerifiedCollections = (owner: PublicKey) => {
     )
 
     return verifiedCollections.filter((x) => x !== null)
-  }, [connection, ownedNfts, enabled])
+  }, [enabled, ownedNfts, network])
 }
 
 export default function NFTCollectionModal({

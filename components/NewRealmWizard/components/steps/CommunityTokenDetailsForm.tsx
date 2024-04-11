@@ -262,7 +262,7 @@ export default function CommunityTokenForm({
               <FormField
                 title="What is the minimum number of community tokens needed to manage this DAO?"
                 description="A user will need at least this many community tokens to edit the DAO"
-                // advancedOption
+              // advancedOption
               >
                 <Input
                   type="tel"
@@ -347,7 +347,7 @@ export default function CommunityTokenForm({
               >
                 {isQuadratic && <div className="body-sm mb-2 text-fgd-2">
                   <div>
-                    <span className="text-[#5DC9EB]">Note:&nbsp;</span>
+                    <span className="text-[#947fff]">Note:&nbsp;</span>
                     Quadratic Voting DAOs typically have a lower circulating supply factor
                     than non-quadratic DAOs. This is because the quadratic formula
                     reduces the weight of votes overall.
@@ -374,9 +374,9 @@ export default function CommunityTokenForm({
         )}
 
         <Controller
-            name="isQuadratic"
-            control={control}
-            defaultValue={true}
+          name="isQuadratic"
+          control={control}
+          defaultValue={true}
           render={({ field: { ref: _, ...field } }) => (
             <div className="pt-3 mb-6">
               <FormField
@@ -403,7 +403,7 @@ export default function CommunityTokenForm({
               <CogIcon
                 width={24}
                 height={24}
-                color="#5DC9EB"
+                color="#947fff"
                 className="mr-2"
               />
             }
@@ -440,7 +440,7 @@ export default function CommunityTokenForm({
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <ExternalLinkIcon className="w-6 h-6 ml-1" color="#5DC9EB" />
+                  <ExternalLinkIcon className="w-6 h-6 ml-1" color="#947fff" />
                 </a>
               </div>
             </FormField>
@@ -453,7 +453,7 @@ export default function CommunityTokenForm({
                   <FormField
                     title="Coefficient A"
                     description=""
-                    // advancedOption
+                  // advancedOption
                   >
                     <Input
                       type="tel"
@@ -477,7 +477,7 @@ export default function CommunityTokenForm({
                   <FormField
                     title="Coefficient B"
                     description=""
-                    // advancedOption
+                  // advancedOption
                   >
                     <Input
                       type="tel"
@@ -501,7 +501,7 @@ export default function CommunityTokenForm({
                   <FormField
                     title="Coefficient C"
                     description=""
-                    // advancedOption
+                  // advancedOption
                   >
                     <Input
                       type="tel"

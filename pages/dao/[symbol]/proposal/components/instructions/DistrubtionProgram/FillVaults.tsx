@@ -138,40 +138,42 @@ const FillVaults = ({
     )
     setDistribution(distribution)
   }
-  const fetchVaults = async () => {
-    if (!client || !distribution) return
-    const v: any = {}
-    for (let i = 0; i < distribution.metadata!.mints.length; i++) {
-      const mint = distribution.metadata!.mints[i]
-      const type = mint.properties.type
-      const vaultAddress = distribution.findVaultAddress(
-        new PublicKey(mint.address)
-      )
-      try {
-        const tokenAccount = await tryGetTokenAccount(
-          connection.current,
-          vaultAddress
-        )
 
-        v[vaultAddress.toString()] = {
-          publicKey: vaultAddress,
-          amount: tokenAccount?.account.amount,
-          mint: tokenAccount?.account.mint,
-          mintIndex: i,
-          type: type,
-        }
-      } catch {
-        v[vaultAddress.toString()] = { amount: -1, mintIndex: i }
-      }
-    }
-    setVaults(v)
-  }
 
   useEffect(() => {
+    const fetchVaults = async () => {
+      if (!client || !distribution) return
+      const v: any = {}
+      for (let i = 0; i < distribution.metadata!.mints.length; i++) {
+        const mint = distribution.metadata!.mints[i]
+        const type = mint.properties.type
+        const vaultAddress = distribution.findVaultAddress(
+          new PublicKey(mint.address)
+        )
+        try {
+          const tokenAccount = await tryGetTokenAccount(
+            connection.current,
+            vaultAddress
+          )
+
+          v[vaultAddress.toString()] = {
+            publicKey: vaultAddress,
+            amount: tokenAccount?.account.amount,
+            mint: tokenAccount?.account.mint,
+            mintIndex: i,
+            type: type,
+          }
+        } catch {
+          v[vaultAddress.toString()] = { amount: -1, mintIndex: i }
+        }
+      }
+      setVaults(v)
+    }
     if (distribution) {
       fetchVaults()
     }
-  }, [distribution])
+  }, [client, connection, distribution])
+
   useEffect(() => {
     const client = new MangoMintsRedemptionClient(
       new AnchorProvider(
@@ -181,7 +183,8 @@ const FillVaults = ({
       )
     )
     setClient(client)
-  }, [])
+  }, [connection])
+
   useEffect(() => {
     if (vaults && form.governedAccount) {
       const trans = Object.values(vaults)
@@ -206,13 +209,13 @@ const FillVaults = ({
             from: isToken
               ? fromToken!.pubkey
               : PublicKey.findProgramAddressSync(
-                  [
-                    new PublicKey(fromNft!.ownership.owner).toBuffer(),
-                    TOKEN_PROGRAM_ID.toBuffer(),
-                    new PublicKey(fromNft!.id).toBuffer(),
-                  ],
-                  ASSOCIATED_TOKEN_PROGRAM_ID
-                )[0],
+                [
+                  new PublicKey(fromNft!.ownership.owner).toBuffer(),
+                  TOKEN_PROGRAM_ID.toBuffer(),
+                  new PublicKey(fromNft!.id).toBuffer(),
+                ],
+                ASSOCIATED_TOKEN_PROGRAM_ID
+              )[0],
             to: v.publicKey,
             amount: '',
             decimals: isToken
@@ -225,7 +228,7 @@ const FillVaults = ({
     } else {
       setTransfers([])
     }
-  }, [vaults])
+  }, [assetAccounts, form.governedAccount, nfts, vaults])
 
   useEffect(() => {
     handleSetInstructions(
@@ -280,41 +283,41 @@ const FillVaults = ({
                 <div>
                   {transfers
                     ? transfers.map((t, idx) => {
-                        return (
-                          <div
-                            key={t.to.toBase58()}
-                            className="flex justify-between"
-                          >
-                            <p>{t.to.toBase58()}</p>{' '}
-                            <p>
-                              {
-                                distribution.metadata!.mints[t.mintIndex]
-                                  .properties?.name
-                              }
-                            </p>{' '}
-                            <span>
-                              <Input
-                                value={t.amount}
-                                onChange={(e) => {
-                                  const newTrans = transfers.map(
-                                    (x, innerIdex) => {
-                                      if (innerIdex === idx) {
-                                        return {
-                                          ...x,
-                                          amount: e.target.value,
-                                        }
+                      return (
+                        <div
+                          key={t.to.toBase58()}
+                          className="flex justify-between"
+                        >
+                          <p>{t.to.toBase58()}</p>{' '}
+                          <p>
+                            {
+                              distribution.metadata!.mints[t.mintIndex]
+                                .properties?.name
+                            }
+                          </p>{' '}
+                          <span>
+                            <Input
+                              value={t.amount}
+                              onChange={(e) => {
+                                const newTrans = transfers.map(
+                                  (x, innerIdex) => {
+                                    if (innerIdex === idx) {
+                                      return {
+                                        ...x,
+                                        amount: e.target.value,
                                       }
-                                      return x
                                     }
-                                  )
-                                  setTransfers(newTrans)
-                                }}
-                                type="text"
-                              ></Input>
-                            </span>
-                          </div>
-                        )
-                      })
+                                    return x
+                                  }
+                                )
+                                setTransfers(newTrans)
+                              }}
+                              type="text"
+                            ></Input>
+                          </span>
+                        </div>
+                      )
+                    })
                     : 'Loading...'}
                 </div>
               </span>

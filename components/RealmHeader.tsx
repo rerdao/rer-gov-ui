@@ -48,12 +48,11 @@ const RealmHeader = () => {
   return (
     <div className="px-4 pt-4 pb-4 rounded-t-lg bg-bkg-2 md:px-6 md:pt-6">
       <div
-        className={`flex items-center ${
-          isBackNavVisible ? 'justify-between' : 'justify-end'
-        } mb-2 md:mb-4`}
+        className={`flex items-center ${isBackNavVisible ? 'justify-between' : 'justify-end'
+          } mb-2 md:mb-4`}
       >
         {isBackNavVisible ? (
-          <Link href={fmtUrlWithCluster('/realms')}>
+          <Link href={fmtUrlWithCluster('/rers')}>
             <a className="flex items-center text-sm transition-all default-transition text-fgd-2 hover:text-fgd-3">
               <ChevronLeftIcon className="w-6 h-6 " />
               Back

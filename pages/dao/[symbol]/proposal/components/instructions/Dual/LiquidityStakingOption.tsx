@@ -58,11 +58,12 @@ const LiquidityStakingOption = ({
       { governedAccount: governedAccount, getInstruction },
       index
     )
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [form])
   useEffect(() => {
     setGovernedAccount(form.baseTreasury?.governance)
   }, [form.baseTreasury])
-  const schema = getDualFinanceLiquidityStakingOptionSchema({form})
+  const schema = getDualFinanceLiquidityStakingOptionSchema({ form })
 
   return (
     <>

@@ -20,17 +20,17 @@ const NavBar = () => {
           <div className="flex cursor-pointer sm:items-center min-w-[36px]">
             <picture>
               <source
-                srcSet="/img/RER-black.svg"
+                srcSet="/img/logo-RER.svg"
                 media="(min-width: 640px)"
               />
-              <img src="/img/RER-white.svg" className="w-20 h-20 sm:w-20" />
+              <img src="/img/logo-RER.svg" className="w-20 h-20 sm:w-20" />
             </picture>
           </div>
         </Link>
         <div className="flex items-center justify-end space-x-2 md:space-x-4">
           <a
             className="border-b border-transparent items-center cursor-pointer -mb-[1px] transition-colors hidden sm:flex hover:border-white"
-            href="https://docs.realms.today/"
+            href="https://rer-dao.gitbook.io/rerdao-docs"
             target="_blank"
             rel="noreferrer"
           >

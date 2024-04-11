@@ -743,11 +743,11 @@ export type VoterStakeRegistry = {
             type: 'publicKey'
           },
           {
-            name: 'realm'
+            name: 'rer'
             type: 'publicKey'
           },
           {
-            name: 'realmGoverningTokenMint'
+            name: 'rerGoverningTokenMint'
             type: 'publicKey'
           },
           {
@@ -1199,7 +1199,7 @@ export type VoterStakeRegistry = {
     },
     {
       code: 6025
-      name: 'InvalidRealmAuthority'
+      name: 'InvalidrealmAuthority'
       msg: ''
     },
     {
@@ -2010,11 +2010,11 @@ export const IDL: VoterStakeRegistry = {
             type: 'publicKey',
           },
           {
-            name: 'realm',
+            name: 'rer',
             type: 'publicKey',
           },
           {
-            name: 'realmGoverningTokenMint',
+            name: 'rerGoverningTokenMint',
             type: 'publicKey',
           },
           {
@@ -2466,7 +2466,7 @@ export const IDL: VoterStakeRegistry = {
     },
     {
       code: 6025,
-      name: 'InvalidRealmAuthority',
+      name: 'InvalidrealmAuthority',
       msg: '',
     },
     {

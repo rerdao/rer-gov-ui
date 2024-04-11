@@ -184,7 +184,7 @@ const useProposalSafetyCheck = (proposal: Proposal) => {
   const config = useRealmConfigQuery().data?.result
   const { realmInfo } = useRealm()
   const { data: transactions } = useSelectedProposalTransactions()
-  const {data: bufferAuthorities} = useBufferAccountsAuthority()
+  const { data: bufferAuthorities } = useBufferAccountsAuthority()
   const governance = useGovernanceByPubkeyQuery(proposal?.governance).data
     ?.result
 
@@ -272,14 +272,7 @@ const useProposalSafetyCheck = (proposal: Proposal) => {
     }
 
     return proposalWarnings
-  }, [
-    realmInfo,
-    config,
-    transactions,
-    walletsPassedToInstructions,
-    governance?.pubkey,
-    treasuryAddress.result,
-  ])
+  }, [realmInfo, transactions, treasuryAddress.result, walletsPassedToInstructions, governance?.pubkey, isUsingForwardProgram, config, bufferAuthorities])
 
   return proposalWarnings
 }

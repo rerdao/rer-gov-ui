@@ -7,8 +7,8 @@ import { isWizardValid, validateSolAddress } from '@utils/formValidation'
 import CreateDAOWizard from '@components/NewRealmWizard/CreateDAOWizard'
 
 // import { FORM_NAME as NFT_FORM } from 'pages/realms/new/nft'
-import { FORM_NAME as MULTISIG_WALLET_FORM } from 'pages/realms/new/multisig'
-import { FORM_NAME as COMMUNITY_TOKEN_FORM } from 'pages/realms/new/community-token'
+import { FORM_NAME as MULTISIG_WALLET_FORM } from 'pages/rers/new/multisig'
+import { FORM_NAME as COMMUNITY_TOKEN_FORM } from 'pages/rers/new/community-token'
 import { useProgramVersionByIdQuery } from '@hooks/queries/useProgramVersionQuery'
 import { DEFAULT_GOVERNANCE_PROGRAM_ID } from '@components/instructions/tools'
 import { PublicKey } from '@solana/web3.js'
@@ -40,13 +40,12 @@ export default function FormPage({
       autoInviteWallet && userAddress ? [userAddress] : undefined,
   })
   const currentStep = formData?.currentStep || 0
-  const title = `Create ${
-    type === MULTISIG_WALLET_FORM
-      ? 'multi-signature wallet'
-      : type === COMMUNITY_TOKEN_FORM
+  const title = `Create ${type === MULTISIG_WALLET_FORM
+    ? 'multi-signature wallet'
+    : type === COMMUNITY_TOKEN_FORM
       ? 'community token DAO'
       : 'NFT community DAO'
-  } | Realms`
+    } | RER`
 
   // Update formData's _programVersion
   const programIdInput =
@@ -116,7 +115,7 @@ export default function FormPage({
     if (fromStep === 0) {
       push(
         {
-          pathname: '/realms/new/',
+          pathname: '/rers/new/',
           query: query?.cluster ? { cluster: query.cluster } : {},
         },
         undefined,

@@ -6,11 +6,11 @@ const Index = () => {
   const REALM = process?.env?.REALM
 
   useEffect(() => {
-    const mainUrl = REALM ? `/dao/${REALM}` : '/realms'
+    const mainUrl = REALM ? `/dao/${REALM}` : '/rers'
     if (!router.asPath.includes(mainUrl)) {
       router.replace(mainUrl)
     }
-  }, [REALM])
+  }, [REALM, router])
 
   return null
 }

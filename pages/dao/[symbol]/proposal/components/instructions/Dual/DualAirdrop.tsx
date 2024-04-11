@@ -51,37 +51,38 @@ const DualAirdrop = ({
     setFormErrors({})
     setForm({ ...form, [propertyName]: value })
   }
-  function getInstruction(): Promise<UiInstruction> {
-    if (airdropType == 'Merkle Proof') {
-      return getMerkleAirdropInstruction({
-        connection,
-        form,
-        schema: merkleSchema,
-        setFormErrors,
-        wallet,
-      })
-    } else {
-      return getGovernanceAirdropInstruction({
-        connection,
-        form,
-        schema: governanceSchema,
-        setFormErrors,
-        wallet,
-      })
-    }
-  }
+  const merkleSchema = getDualFinanceMerkleAirdropSchema({ form });
+  const governanceSchema = getDualFinanceGovernanceAirdropSchema({ form });
+
   useEffect(() => {
     handleSetInstructions(
       { governedAccount: governedAccount, getInstruction },
       index
     )
-  }, [form])
+    function getInstruction(): Promise<UiInstruction> {
+      if (airdropType == 'Merkle Proof') {
+        return getMerkleAirdropInstruction({
+          connection,
+          form,
+          schema: merkleSchema,
+          setFormErrors,
+          wallet,
+        })
+      } else {
+        return getGovernanceAirdropInstruction({
+          connection,
+          form,
+          schema: governanceSchema,
+          setFormErrors,
+          wallet,
+        })
+      }
+    }
+  }, [airdropType, connection, form, governanceSchema, governedAccount, handleSetInstructions, index, merkleSchema, wallet])
+
   useEffect(() => {
     setGovernedAccount(form.treasury?.governance)
   }, [form.treasury])
-
-  const merkleSchema = getDualFinanceMerkleAirdropSchema({form});
-  const governanceSchema = getDualFinanceGovernanceAirdropSchema({form});
 
   return (
     <>

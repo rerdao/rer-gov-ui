@@ -130,7 +130,7 @@ export function AppContents(props: Props) {
   const { vsrClient } = useVsrClient()
 
   const realmName = realmInfo?.displayName ?? realm?.account?.name
-  const title = realmName ? `${realmName}` : 'Realms'
+  const title = realmName ? `${realmName}` : 'RERDAO - Reverion'
 
   // Note: ?v==${Date.now()} is added to the url to force favicon refresh.
   // Without it browsers would cache the last used and won't change it for different realms
@@ -148,9 +148,8 @@ export function AppContents(props: Props) {
     }
 
     const resourcePath = getResourcePathPart(symbol as string)
-    const fullUrl = `${
-      window.location.origin
-    }/realms/${resourcePath}/favicon.ico?v=${Date.now()}`
+    const fullUrl = `${window.location.origin
+      }/realms/${resourcePath}/favicon.ico?v=${Date.now()}`
 
     // Check if the domain is in the allow list
     try {
@@ -215,6 +214,7 @@ export function AppContents(props: Props) {
     } else if (!wallet?.connected || !ownTokenRecord) {
       resetDepositState()
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     config?.account.communityTokenConfig.voterWeightAddin,
     connection,
@@ -313,7 +313,7 @@ export function AppContents(props: Props) {
               rel="icon"
               type="image/png"
               sizes="16x16"
-              href="/favicons/favicon-16x16.png"
+              href="/favicons/favicon-48x48.png"
             />
           </>
         )}

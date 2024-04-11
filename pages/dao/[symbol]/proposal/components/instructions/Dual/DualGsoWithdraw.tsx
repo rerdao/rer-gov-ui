@@ -53,10 +53,10 @@ const DualGsoWithdraw = ({
       { governedAccount: governedAccount, getInstruction },
       index
     )
-  }, [form, governedAccount, handleSetInstructions, index, connection, wallet])
+  }, [form, governedAccount, handleSetInstructions, index, connection, wallet, schema])
   useEffect(() => {
     handleSetForm({ value: undefined, propertyName: 'mintPk' })
-  }, [form.baseTreasury])
+  }, [form.baseTreasury, handleSetForm])
   useEffect(() => {
     setGovernedAccount(form.baseTreasury?.governance)
   }, [form.baseTreasury])

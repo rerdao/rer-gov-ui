@@ -27,8 +27,8 @@ export default function RealmFeedItem() {
   return (
     <div>
       <Head>
-        <title>Realm</title>
-        <meta property="og:title" content="Realm" key="title" />
+        <title>Rer</title>
+        <meta property="og:title" content="Rer" key="title" />
       </Head>
       <FeedItem feedItemId={feedItemId} realmUrlId={id as string} />
     </div>

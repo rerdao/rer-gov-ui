@@ -207,7 +207,7 @@ export const assembleWallets = async (
           upgradeAuthority: account.authority?.toBase58(),
           walletIsUpgradeAuthority:
             account.authority?.toBase58() ===
-              walletMap[walletAddress].governanceAddress ||
+            walletMap[walletAddress].governanceAddress ||
             account.authority?.toBase58() === walletAddress,
           raw: p,
         }))
@@ -319,16 +319,16 @@ export const assembleWallets = async (
 
   const auxiliaryWallets: AuxiliaryWallet[] = auxiliaryAssets.length
     ? [
-        {
-          assets: auxiliaryAssets,
-          name: 'Auxiliary Assets',
-          totalValue: calculateTotalValue(
-            auxiliaryAssets.map((asset) =>
-              'value' in asset ? asset.value : new BigNumber(0)
-            )
-          ),
-        },
-      ]
+      {
+        assets: auxiliaryAssets,
+        name: 'Auxiliary Assets',
+        totalValue: calculateTotalValue(
+          auxiliaryAssets.map((asset) =>
+            'value' in asset ? asset.value : new BigNumber(0)
+          )
+        ),
+      },
+    ]
     : []
 
   const walletsToMerge = allWallets
@@ -365,7 +365,7 @@ export const assembleWallets = async (
       ) {
         const authority: RealmAuthority = {
           type: AssetType.RealmAuthority,
-          id: realmAuthority.toBase58() + 'realm',
+          id: realmAuthority.toBase58() + 'rer',
           address: realmAuthority.toBase58(),
           config: {
             communityMintMaxVoteWeightSource:

@@ -132,7 +132,7 @@ export async function getVoteDepositInstruction({
     (await validateInstruction({ schema, form, setFormErrors })) &&
     realmPk !== undefined
   if (!realmPk) {
-    setFormErrors({ realm: 'Realm not found' })
+    setFormErrors({ realm: 'Rer not found' })
   }
 
   const serializedInstruction = ''
@@ -153,7 +153,7 @@ export async function getVoteDepositInstruction({
       realmPk
     )
     if (!realm) {
-      throw new Error('Realm not found')
+      throw new Error('Rer not found')
     }
     const plugin = await determineVotingPowerType(
       connection.current,

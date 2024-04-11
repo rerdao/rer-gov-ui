@@ -88,6 +88,7 @@ const RemoveServiceFromDID = ({
       { governedAccount: form?.governedAccount?.governance, getInstruction },
       index
     )
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [form])
   const schema = yup.object().shape({
     governedAccount: SchemaComponents.governedAccount,

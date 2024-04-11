@@ -19,7 +19,7 @@ const useSelectedRealmRegistryEntry = () => {
   // this happens a lot and might be slightly expensive so i decided to use react-query
   const { data: lookup } = useQuery({
     enabled: typeof symbol === 'string',
-    queryKey: ['Realms entry lookup', symbol],
+    queryKey: ['Rers entry lookup', symbol],
     queryFn: () => {
       if (typeof symbol !== 'string') throw new Error()
 

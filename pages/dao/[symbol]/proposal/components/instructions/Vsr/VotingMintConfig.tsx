@@ -148,7 +148,7 @@ const VotingMintConfig = ({
       // In that case we default to 0 existing mints
       const registrarAcc = (await vsrClient?.program.account.registrar.fetch(
         registrar
-      )) as Registrar
+      )) as unknown as Registrar
 
       const registrarMints = registrarAcc?.votingMints
         .filter((vm) => !vm.mint.equals(new PublicKey(emptyPk)))
@@ -258,11 +258,11 @@ const VotingMintConfig = ({
       ),
     ...(showGrantAuth
       ? {
-          grantAuthority: yup
-            .object()
-            .nullable()
-            .required('Grant authority is required'),
-        }
+        grantAuthority: yup
+          .object()
+          .nullable()
+          .required('Grant authority is required'),
+      }
       : {}),
   })
   const inputs: InstructionInput[] = [
@@ -302,16 +302,16 @@ const VotingMintConfig = ({
     },
     ...(showGrantAuth
       ? [
-          {
-            label: 'Grant authority (Governance)',
-            initialValue: form?.grantAuthority,
-            name: 'grantAuthority',
-            type: InstructionInputType.GOVERNED_ACCOUNT,
-            options: assetAccounts.filter(
-              (x) => x.isToken || x.isSol || x.isNft
-            ),
-          },
-        ]
+        {
+          label: 'Grant authority (Governance)',
+          initialValue: form?.grantAuthority,
+          name: 'grantAuthority',
+          type: InstructionInputType.GOVERNED_ACCOUNT,
+          options: assetAccounts.filter(
+            (x) => x.isToken || x.isSol || x.isNft
+          ),
+        },
+      ]
       : []),
     {
       label: 'mint digit shift',

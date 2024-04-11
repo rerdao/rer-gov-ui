@@ -18,7 +18,7 @@ module.exports = {
   theme: {
     fontFamily: {
       serif: ['p22-mackinac-pro, ui-serif, serif'],
-      sans: ['Ambit, sans-serif'],
+      sans: ['Cal, sans-serif'],
       display: ['PT Mono, monospace'],
       body: ['Inter, sans-serif'],
     },
@@ -29,7 +29,7 @@ module.exports = {
       colors: {
         discord: '#7289da',
         'dark-theme': {
-          primary: { light: '#5DC9EB', dark: '#cecece' },
+          primary: { light: '#947fff', dark: '#cecece' },
           'secondary-1': { light: '#AFD803', dark: '#6CBF00' },
           'secondary-2': { light: '#FFCB1B', dark: '#F48F25' },
           'bkg-1': '#17161c',
@@ -48,7 +48,7 @@ module.exports = {
           discord: '#7289da',
         },
         'light-theme': {
-          primary: { light: '#5DC9EB', dark: '#101010' },
+          primary: { light: '#947fff', dark: '#101010' },
           'secondary-1': { light: '#AFD803', dark: '#6CBF00' },
           'secondary-2': { light: '#E54033', dark: '#C7251A' },
           'fgd-1': '#3d3d3d',

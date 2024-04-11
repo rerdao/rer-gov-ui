@@ -1,9 +1,9 @@
 import Header from '@components/Header'
 import Text from '@components/Text'
 
-import { FORM_NAME as COMMUNITY_TOKEN_FORM } from 'pages/realms/new/community-token'
-import { FORM_NAME as MULTISIG_FORM } from 'pages/realms/new/multisig'
-import { FORM_NAME as NFT_FORM } from 'pages/realms/new/nft'
+import { FORM_NAME as COMMUNITY_TOKEN_FORM } from 'pages/rers/new/community-token'
+import { FORM_NAME as MULTISIG_FORM } from 'pages/rers/new/multisig'
+import { FORM_NAME as NFT_FORM } from 'pages/rers/new/nft'
 
 function StepProgressIndicator({ formType, currentStep, totalSteps }) {
   let stepTitle = ''

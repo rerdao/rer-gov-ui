@@ -63,10 +63,10 @@ export async function rules2governanceConfig(
   const realm = await fetchGovernanceAccountByPubkey(
     connection,
     Realm,
-    'Realm',
+    'RER',
     realmPk,
   );
-  if (!realm.result) throw new Error('realm fetch failed');
+  if (!realm.result) throw new Error('rer fetch failed');
   const communityMintInfo = await fetchMintInfoByPubkey(
     connection,
     realm.result.account.communityMint,

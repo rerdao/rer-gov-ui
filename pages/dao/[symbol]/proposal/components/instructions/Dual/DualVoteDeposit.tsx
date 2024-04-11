@@ -79,16 +79,16 @@ const DualVoteDeposit = ({
         />
       </Tooltip>
       <Input
-        label="Realm"
+        label="Rer"
         value={form.realm}
         type="text"
         onChange={(evt) =>
           handleSetForm({
             value: evt.target.value,
-            propertyName: 'realm',
+            propertyName: 'rer',
           })
         }
-        error={formErrors['realm']}
+        error={formErrors['rer']}
       />
       <Tooltip content="Token to be delegated.">
         <GovernedAccountSelect

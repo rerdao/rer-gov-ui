@@ -41,9 +41,9 @@ const MOBILE_WALLET_PROVIDER = {
   adapter: new SolanaMobileWalletAdapter({
     addressSelector: createDefaultAddressSelector(),
     appIdentity: {
-      icon: '/img/logo-realms.png',
-      name: 'Realms',
-      uri: 'https://app.realms.today',
+      icon: '/img/logo-rer.png',
+      name: 'RER',
+      uri: 'https://home.rerdao.xyz'
     },
     authorizationResultCache: createDefaultAuthorizationResultCache(),
     // FIXME: Find a way to toggle this when the application is set to devnet.
@@ -83,13 +83,13 @@ const WALLET_CONNECT = {
     // TODO make network dynamic
     network: WalletAdapterNetwork.Mainnet,
     options: {
-      projectId: '59618f8645f135f20f975e83f4ef0743',
+      projectId: '5faf673b2003695a7f859a4ee1d4f5d6',
       metadata: {
-        name: 'Realms',
+        name: 'RER',
         description:
-          'Powered by Solana, Realms is a hub for communities to share ideas, make decisions, and collectively manage treasuries.',
-        url: 'https://app.realms.today/img/logo-realms.png',
-        icons: ['https://app.realms.today'],
+          'Powered by Solana, RERs is a hub for communities to share ideas, make decisions, and collectively manage treasuries.',
+        url: 'https://home.rerdao.xyzy/img/logo-rer.png',
+        icons: ['https://home.rerdao.xyz'],
       },
     },
   }),

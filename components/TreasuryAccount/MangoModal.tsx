@@ -43,7 +43,7 @@ enum ProposalType {
   DEPOSIT = 'Deposit',
   WITHDRAW = 'Withdraw',
 }
-import {useVoteByCouncilToggle} from "@hooks/useVoteByCouncilToggle";
+import { useVoteByCouncilToggle } from "@hooks/useVoteByCouncilToggle";
 
 const MangoModal = ({ account }: { account: AssetAccount }) => {
   const { canUseTransferInstruction } = useGovernanceAssets()
@@ -92,7 +92,7 @@ const MangoModal = ({ account }: { account: AssetAccount }) => {
 
   useEffect(() => {
     setForm({ ...form, mangoAccount: undefined })
-  }, [programSelectorHook.program?.val.toBase58()])
+  }, [form])
 
   useEffect(() => {
     setFormErrors({})
@@ -101,13 +101,12 @@ const MangoModal = ({ account }: { account: AssetAccount }) => {
       accountName: '',
       amount: 0,
       mangoAccount: undefined,
-      title: `${proposalType} ${
-        tokenPriceService.getTokenInfo(
-          account.extensions.mint!.publicKey.toBase58()
-        )?.symbol || 'tokens'
-      } to the Mango`,
+      title: `${proposalType} ${tokenPriceService.getTokenInfo(
+        account.extensions.mint!.publicKey.toBase58()
+      )?.symbol || 'tokens'
+        } to the Mango`,
     })
-  }, [proposalType])
+  }, [account.extensions.mint, form, proposalType])
 
   const SOL_BUFFER = 0.02
 
@@ -188,7 +187,7 @@ const MangoModal = ({ account }: { account: AssetAccount }) => {
     )
     const maxWithdrawForBank = getMaxWithdrawForBank(mangoGroup, bank, form.mangoAccount)
     setMaxWithdrawBalance(maxWithdrawForBank.toNumber())
-  }, [proposalType, mangoGroup, form])
+  }, [proposalType, mangoGroup, form, account.extensions.mint, getMaxWithdrawForBank])
 
   const handleCreateAccount = async () => {
     const isValid = await validateInstruction({ schema, form, setFormErrors })
@@ -264,11 +263,11 @@ const MangoModal = ({ account }: { account: AssetAccount }) => {
           .remainingAccounts(
             [bank.publicKey, bank.oracle].map(
               (pk) =>
-                ({
-                  pubkey: pk,
-                  isWritable: false,
-                  isSigner: false,
-                } as AccountMeta)
+              ({
+                pubkey: pk,
+                isWritable: false,
+                isSigner: false,
+              } as AccountMeta)
             )
           )
           .instruction()
@@ -294,7 +293,7 @@ const MangoModal = ({ account }: { account: AssetAccount }) => {
               serializeInstructionToBase64(withdrawTx)
             ),
             holdUpTime:
-            account?.governance.account?.config.minInstructionHoldUpTime,
+              account?.governance.account?.config.minInstructionHoldUpTime,
             prerequisiteInstructions: [],
           }
 
@@ -366,10 +365,10 @@ const MangoModal = ({ account }: { account: AssetAccount }) => {
           <div className="pt-2 space-y-4 w-full">
             {account.extensions.mint?.publicKey.toBase58() ===
               USDC_MINT.toBase58() && (
-              <ProgramSelector
-                programSelectorHook={programSelectorHook}
-              ></ProgramSelector>
-            )}
+                <ProgramSelector
+                  programSelectorHook={programSelectorHook}
+                ></ProgramSelector>
+              )}
 
             <Select
               error={formErrors['mangoAccount']}
@@ -538,10 +537,10 @@ const MangoModal = ({ account }: { account: AssetAccount }) => {
           <div className="pt-2 space-y-4 w-full">
             {account.extensions.mint?.publicKey.toBase58() ===
               USDC_MINT.toBase58() && (
-              <ProgramSelector
-                programSelectorHook={programSelectorHook}
-              ></ProgramSelector>
-            )}
+                <ProgramSelector
+                  programSelectorHook={programSelectorHook}
+                ></ProgramSelector>
+              )}
 
             <Select
               error={formErrors['mangoAccount']}

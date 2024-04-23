@@ -13,6 +13,7 @@ const Index = () => {
   }, [REALM, router])
 
   return null
+
 }
 
 export default Index

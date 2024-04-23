@@ -37,7 +37,7 @@ export const MobileRealmSearchNavigation = forwardRef<HTMLButtonElement, Props>(
             {
               key: ECOSYSTEM_PAGE.toBase58(),
               iconUrl: ecosystemIcon.src,
-              name: 'Solana Ecosystem',
+              name: 'Reverion Ecosystem',
               publicKey: ECOSYSTEM_PAGE,
               url: '/ecosystem',
             } as {

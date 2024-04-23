@@ -33,11 +33,11 @@ export function GlobalFooter(props: Props) {
           'sm:text-sm',
         )}
       >
-        <div>© {year} Solana Technology Services LLC</div>
+        <div>© {year} RER DAO | Reverion Technologies Corp.</div>
         <div className="hidden sm:block mx-2">|</div>
-        <a href="https://realms.today/terms" target="_blank" rel="noreferrer">
+        {/* <a href="https://realms.today/terms" target="_blank" rel="noreferrer">
           Terms
-        </a>
+        </a> */}
         <div className="hidden sm:block mx-2">|</div>
         <a
           href="https://realms.today/privacy-policy"

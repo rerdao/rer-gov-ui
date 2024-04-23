@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+// import '../../styles/button.css'
 
 import {
   createUnchartedRealmInfo,
@@ -109,6 +110,22 @@ const Realms = () => {
       setFilteredRealms(realms)
     }
   }
+
+  // const handleClick = (event) => {
+  //   // Check if the clicked element has the desired class or identifier
+  //   if (event.target.classList.contains('empty-box-plus') || event.target.id === 'plus-box') {
+  //     // Redirect to Google Form using the provided code
+  //     // eslint-disable-next-line react-hooks/rules-of-hooks
+  //     useEffect(() => {
+  //       if (typeof window !== 'undefined') {
+  //         window.location.replace(
+  //           'https://docs.google.com/forms/d/e/1FAIpQLSf_BP5Oi1WiXxm6VlfZWhxJmZBpHrl8fLMN3dLWKIwu-g-3Tw/viewform'
+  //         );
+  //       }
+  //     }, []);
+  //   }
+  // };
+
   return (
     <div>
       <div className="flex flex-wrap items-center justify-between w-full mb-6">
@@ -125,6 +142,9 @@ const Realms = () => {
                 <BsLayoutWtf className="h-4 text-fgd-1 w-4" />
               )}
             </button>
+            {/* <button className="empty-box-plus" onClick={handleClick}>
+              +
+            </button> */}
           </div>
           <Input
             className="pl-8"

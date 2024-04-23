@@ -35,9 +35,15 @@ const Footer = () => {
         'lg:pb-24',
         'gap-y-8',
         'md:gap-y-0',
-        'z-[1]'
+        'z-[1]',
       )}
     >
+      <div className="z-[-1] fixed top-[-150px] left-0 w-[100vw] h-[100vh] bg-bkg-1">
+        <picture>
+          <source srcSet="/img/footer-bg.png" media="(min-width: 640px)" />
+          <img src="/img/footer-bg.png" />
+        </picture>
+      </div>
       <div
         className={cx(
           'absolute',
@@ -92,14 +98,14 @@ const Footer = () => {
             'mr-2',
             'text-sm'
           )}
-          href="https://docs.realms.today/"
+          href="https://rer-dao.gitbook.io/rerdao-docs"
         >
           <ExternalLinkIcon className="w-4 h-4 mr-2 stroke-current" />
           <div>Read the Docs</div>
         </a>
 
         <div className="opacity-70">
-          Powered by <span className="font-bold">Solana and Realm</span>
+          Powered by <span className="font-bold">Solana and Realms</span>
         </div>
       </div>
     </div>

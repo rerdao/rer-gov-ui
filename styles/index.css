@@ -405,3 +405,12 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/word-break#values */
 .react-resizable-handle-se::after {
   border-color: white !important;
 }
+
+.empty-box-plus {
+  /* Set appropriate styles for visibility */
+  width: 40px; /* Adjust width/height as needed */
+  height: 40px;
+  background-color: #eee; /* Example background color */
+  border: 1px solid #ccc; /* Example border */
+  cursor: pointer; /* Indicate clickable behavior */
+}

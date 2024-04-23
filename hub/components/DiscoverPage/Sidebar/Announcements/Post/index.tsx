@@ -56,7 +56,7 @@ export function Post(props: Props) {
         />
         <div className="text-xs font-medium text-neutral-900">
           {props.post.realm.publicKey.equals(ECOSYSTEM_PAGE)
-            ? 'Solana Ecosystem'
+            ? 'Reverion Ecosystem'
             : props.post.realm.name}
         </div>
       </div>

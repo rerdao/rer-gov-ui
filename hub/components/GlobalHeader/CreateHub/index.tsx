@@ -149,7 +149,7 @@ export function CreateHub(props: Props) {
                           <LaunchIcon className="h-4 w-4 ml-1" />
                         </Button.Secondary>
                         <div className="text-xs text-neutral-500">
-                          app.realms.today/rers/new
+                          home.rerdao.xyz/rers/new
                         </div>
                       </div>
                     </div>
@@ -169,7 +169,7 @@ export function CreateHub(props: Props) {
                         setPkIsValid(false);
                       }}
                     >
-                      Realms Org Hub
+                      Reverion Org Hub
                     </a>
                   </Link>
                   {/* <a

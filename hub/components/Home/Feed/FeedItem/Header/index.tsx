@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import ChevronRightIcon from '@carbon/icons-react/lib/ChevronRight';
 import type { PublicKey } from '@solana/web3.js';
 import { differenceInMinutes, formatDistanceToNowStrict } from 'date-fns';
@@ -43,8 +44,8 @@ interface Props {
 export function Header(props: Props) {
   const authorName = props.author
     ? props.author.civicInfo?.handle ||
-      props.author.twitterInfo?.handle ||
-      abbreviateAddress(props.author.publicKey)
+    props.author.twitterInfo?.handle ||
+    abbreviateAddress(props.author.publicKey)
     : 'unknown author';
 
   const isEdited =

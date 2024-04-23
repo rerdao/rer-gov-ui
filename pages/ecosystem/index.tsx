@@ -6,8 +6,8 @@ export default function Ecosystem() {
   return (
     <div>
       <Head>
-        <title>Ecosystem</title>
-        <meta property="og:title" content="Solana Ecosystem" key="title" />
+        <title>Reverion Ecosystem</title>
+        <meta property="og:title" content="Reverion Ecosystem" key="title" />
       </Head>
       <EcosystemFeed />
     </div>

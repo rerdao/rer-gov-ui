@@ -53,7 +53,7 @@ export function EcosystemHeader(props: Props) {
                 'md:whitespace-normal',
               )}
             >
-              Solana Ecosystem
+              Reverion Ecosystem
             </div>
             <div className="mt-1.5 text-sm text-neutral-700">
               All the updates from across the Solana ecosystem

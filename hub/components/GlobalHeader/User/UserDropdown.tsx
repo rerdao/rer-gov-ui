@@ -101,7 +101,7 @@ export function UserDropdown(props: Props) {
                 }}
               >
                 <CivicIcon />
-                <div>Connect Civic</div>
+                <div>Connect NFTDavao</div>
               </DropdownButton>
             )}
             <DropdownButton onClick={() => setJwt(null)}>
